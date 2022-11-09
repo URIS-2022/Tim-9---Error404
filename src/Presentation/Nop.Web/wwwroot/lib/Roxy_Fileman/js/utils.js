@@ -60,7 +60,7 @@ RoxyUtils.GetUrlParam = function(varName, url){
   if(url.indexOf('?') > -1){
      url = url.substr(url.indexOf('?') + 1);
      url = url.split('&');
-     for(i = 0; i < url.length; i++){
+     for(var i = 0; i < url.length; i++){  //promenjeno
        var tmp = url[i].split('=');
        if(tmp[0] && tmp[1] && tmp[0] == varName){
          ret = tmp[1];

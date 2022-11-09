@@ -72,7 +72,7 @@ namespace Nop.Plugin.Widgets.GoogleAnalytics.Components
 
         #region Utilities
 
-        private string FixIllegalJavaScriptChars(string text)
+        private static string FixIllegalJavaScriptChars(string text) //promenjeno
         {
             if (string.IsNullOrEmpty(text))
                 return text;

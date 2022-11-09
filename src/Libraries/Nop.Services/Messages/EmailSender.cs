@@ -87,7 +87,7 @@ namespace Nop.Services.Messages
         /// <param name="mDate">Date and time that the specified file or directory was last written to</param>
         /// <param name="rDate">Date and time that the specified file or directory was last access to.</param>
         /// <returns>A leaf-node MIME part that contains an attachment.</returns>
-        protected MimePart CreateMimeAttachment(string attachmentFileName, byte[] binaryContent, DateTime cDate, DateTime mDate, DateTime rDate)
+        protected static MimePart CreateMimeAttachment(string attachmentFileName, byte[] binaryContent, DateTime cDate, DateTime mDate, DateTime rDate) //promenjeno
         {
             if (!ContentType.TryParse(MimeTypes.GetMimeType(attachmentFileName), out var mimeContentType))
                 mimeContentType = new ContentType("application", "octet-stream");

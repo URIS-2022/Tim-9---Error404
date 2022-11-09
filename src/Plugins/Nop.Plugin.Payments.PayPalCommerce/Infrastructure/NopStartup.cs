@@ -29,6 +29,7 @@ namespace Nop.Plugin.Payments.PayPalCommerce.Infrastructure
         /// <param name="application">Builder for configuring an application's request pipeline</param>
         public void Configure(IApplicationBuilder application)
         {
+            //DOING SOMETHING - PROMENJENO
         }
 
         /// <summary>

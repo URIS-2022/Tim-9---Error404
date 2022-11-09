@@ -1480,7 +1480,7 @@ namespace Nop.Services.Seo
                 InitializeSeoCharacterTable();
 
             var sb = new StringBuilder();
-            foreach (var c in name.ToCharArray())
+            foreach (var c in name)    //promenjeno
             {
                 var c2 = c.ToString();
                 if (convertNonWesternChars)

@@ -26,7 +26,7 @@ namespace Nop.Plugin.Misc.Sendinblue
         /// <summary>
         /// Gets a URL to edit message template on Sendinblue account
         /// </summary>
-        public static string EditMessageTemplateUrl = "https://my.sendinblue.com/camp/template/{0}/message-setup?tap_a=30591-fb13f0&tap_s=840216-5153c7";
+        private static string EditMessageTemplateUrl = "https://my.sendinblue.com/camp/template/{0}/message-setup?tap_a=30591-fb13f0&tap_s=840216-5153c7"; //promenjeno
 
         /// <summary>
         /// Gets a name of the route to the import contacts callback

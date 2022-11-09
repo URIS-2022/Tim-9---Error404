@@ -91,7 +91,7 @@ namespace Nop.Plugin.Shipping.FixedByWeightByTotal
         /// <param name="subTotal">Subtotal</param>
         /// <param name="weight">Weight</param>
         /// <returns>Rate</returns>
-        private decimal GetRate(ShippingByWeightByTotalRecord shippingByWeightByTotalRecord, decimal subTotal, decimal weight)
+        private static decimal GetRate(ShippingByWeightByTotalRecord shippingByWeightByTotalRecord, decimal subTotal, decimal weight) //promenjeno
         {
             //additional fixed cost
             var shippingTotal = shippingByWeightByTotalRecord.AdditionalFixedCost;

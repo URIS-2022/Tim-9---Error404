@@ -77,9 +77,9 @@ namespace Nop.Services.Security
         /// <param name="saltkey">Salk key</param>
         /// <param name="passwordFormat">Password format (hash algorithm)</param>
         /// <returns>Password hash</returns>
-        public virtual string CreatePasswordHash(string password, string saltkey, string passwordFormat)
+        public virtual string CreatePasswordHash(string password, string saltKey, string passwordFormat) //promenjeno
         {
-            return HashHelper.CreateHash(Encoding.UTF8.GetBytes(string.Concat(password, saltkey)), passwordFormat);
+            return HashHelper.CreateHash(Encoding.UTF8.GetBytes(string.Concat(password, saltKey)), passwordFormat);
         }
 
         /// <summary>

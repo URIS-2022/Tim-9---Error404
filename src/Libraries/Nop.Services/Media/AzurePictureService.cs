@@ -28,9 +28,9 @@ namespace Nop.Services.Media
 
         private static BlobContainerClient _blobContainerClient;
         private static BlobServiceClient _blobServiceClient;
-        private static bool _azureBlobStorageAppendContainerName;
+        private bool _azureBlobStorageAppendContainerName; //PROMENJENO
         private static bool _isInitialized;
-        private static string _azureBlobStorageConnectionString;
+        private string _azureBlobStorageConnectionString; //PROMENJENO
         private static string _azureBlobStorageContainerName;
         private static string _azureBlobStorageEndPoint;
 
