@@ -21,7 +21,7 @@ namespace Nop.Core.Caching
 
         protected readonly IDistributedCache _distributedCache;
         protected readonly ConcurrentDictionary<CacheKey, object> _items;
-        protected static readonly AsyncLock _locker;
+        protected static readonly AsyncLock _locker = new AsyncLock();
 
         protected delegate void OnKeyChanged(CacheKey key);
 
