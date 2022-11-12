@@ -275,7 +275,6 @@ namespace Nop.Core
                 if (c.ToString() != c.ToString().ToLowerInvariant())
                     result += " " + c.ToString();
                 else
-                    result += c.ToString();
 
             //ensure no spaces (e.g. when the first letter is upper case)
             result = result.TrimStart();
