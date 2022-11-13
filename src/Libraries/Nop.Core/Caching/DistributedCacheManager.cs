@@ -32,10 +32,6 @@ namespace Nop.Core.Caching
 
         #region Ctor
 
-        static DistributedCacheManager()
-        {
-            _locker = new AsyncLock();
-        }
 
         protected DistributedCacheManager(AppSettings appSettings, IDistributedCache distributedCache) :base(appSettings)
         {
@@ -87,7 +83,7 @@ namespace Nop.Core.Caching
         /// </summary>
         /// <param name="key">Cache key</param>
         /// <returns>Cache entry options</returns>
-        private DistributedCacheEntryOptions PrepareEntryOptions(CacheKey key)
+        private static DistributedCacheEntryOptions PrepareEntryOptions(CacheKey key)
         {
             //set expiration time for the passed cache key
             var options = new DistributedCacheEntryOptions
