@@ -9,12 +9,12 @@ namespace Nop.Plugin.Widgets.GoogleAnalytics.Api
     {
         private readonly string _utmt = "item";
 
-        private string _utmtid;     //OrderId
-        private string _utmipc;     //Product code
-        private string _utmipn;     //Product name
-        private string _utmipr;     //Product price (unit price)
-        private string _utmiqt;     //Quantity
-        private string _utmiva;     //Product category
+        private readonly string _utmtid;     //OrderId
+        private readonly string _utmipc;     //Product code
+        private readonly string _utmipn;     //Product name
+        private readonly string _utmipr;     //Product price (unit price)
+        private readonly string _utmiqt;     //Quantity
+        private readonly string _utmiva;     //Product category
 
         /// <summary>
         /// Create a new TransactionItem

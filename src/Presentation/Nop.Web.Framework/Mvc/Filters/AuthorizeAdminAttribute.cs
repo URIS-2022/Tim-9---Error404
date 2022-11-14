@@ -87,10 +87,10 @@ namespace Nop.Web.Framework.Mvc.Filters
                     return;
 
                 //there is AdminAuthorizeFilter, so check access
-                if (context.Filters.Any(filter => filter is AuthorizeAdminFilter))
+                if (context.Filters.Any(filter => filter is AuthorizeAdminFilter) && !await _permissionService.AuthorizeAsync(StandardPermissionProvider.AccessAdminPanel))
                 {
                     //authorize permission of access to the admin area
-                    if (!await _permissionService.AuthorizeAsync(StandardPermissionProvider.AccessAdminPanel))
+                    //spojena dva if-a &&
                         context.Result = new ChallengeResult();
                 }
             }

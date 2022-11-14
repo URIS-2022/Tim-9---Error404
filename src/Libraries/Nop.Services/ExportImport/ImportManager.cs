@@ -2709,7 +2709,7 @@ namespace Nop.Services.ExportImport
         public virtual async Task ImportOrdersFromXlsxAsync(Stream stream)
         {
             using var workbook = new XLWorkbook(stream);
-            var downloadedFiles = new List<string>();
+            //izmenjeno
 
             (var metadata, var worksheet) = await PrepareImportOrderDataAsync(workbook);
 
@@ -3037,7 +3037,7 @@ namespace Nop.Services.ExportImport
             public bool IsNew { get; set; }
         }
 
-        public partial class CategoryKey 
+        sealed public partial class CategoryKey : IEquatable<CategoryKey> //izmenjeno dodato :
         {
             /// <returns>A task that represents the asynchronous operation</returns>
             public static async Task<CategoryKey> CreateCategoryKeyAsync(Category category, ICategoryService categoryService, IList<Category> allCategories, IStoreMappingService storeMappingService)

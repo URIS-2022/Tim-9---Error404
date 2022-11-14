@@ -34,7 +34,7 @@ namespace Nop.Core.Domain.Media
         /// <returns></returns>
         public int CompareTo(PictureHashItem other)
         {
-            return other.Equals(null) ? -1 : PictureId.CompareTo(other.PictureId);
+            return other == null ? -1 : PictureId.CompareTo(other.PictureId);
         }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DocumentFormat.OpenXml.Office2010.Excel;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -364,8 +365,8 @@ namespace Nop.Web.Controllers
         {
             var customer = await _workContext.GetCurrentCustomerAsync();
             var address = await _customerService.GetCustomerAddressAsync(customer.Id, addressId);
-            if (address == null)
-                throw new ArgumentNullException(nameof(address));
+
+            ArgumentNullException.ThrowIfNull(address); //izmenjeno remove i dodato
 
             var addressModel = new AddressModel();
 

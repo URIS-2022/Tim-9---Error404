@@ -317,7 +317,6 @@ namespace Nop.Services.ExportImport
         /// </returns>
         protected virtual async Task<object> GetManufacturersAsync(Product product)
         {
-            StringBuilder sb = new StringBuilder();
             string manufacturerNames = null;
             foreach (var pm in await _manufacturerService.GetProductManufacturersByProductIdAsync(product.Id, true))
             {
@@ -328,7 +327,7 @@ namespace Nop.Services.ExportImport
                 }
                 else
                 {
-                    sb.AppendFormat("{0}{1}", manufacturerNames, pm.ManufacturerId.ToString());
+                    manufacturerNames += pm.ManufacturerId.ToString();
                 }
 
                 manufacturerNames += ";";
@@ -417,7 +416,6 @@ namespace Nop.Services.ExportImport
             }
             catch (ArgumentNullException)
             {
-                Console.WriteLine("some error occured");
             }
 
             return !productAdvancedMode && !func(_productEditorSettings);

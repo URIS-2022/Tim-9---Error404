@@ -111,7 +111,9 @@ namespace Nop.Services.Media.RoxyFileman
         /// </summary>
         /// <param name="path">Path to the image</param>
         /// <returns>Image format</returns>
-        protected virtual ImageFormat GetImageFormat(string path)
+
+        [System.Runtime.Versioning.SupportedOSPlatform("windows")]  //dodat dekorater na vrh klase
+        protected virtual ImageFormat GetImageFormat(string path) 
         {
             var fileExtension = _fileProvider.GetFileExtension(path).ToLowerInvariant();
             return fileExtension switch
@@ -139,6 +141,7 @@ namespace Nop.Services.Media.RoxyFileman
         /// <param name="destinstionPath">Path to the destination image</param>
         /// <param name="width">Width</param>
         /// <param name="height">Height</param>
+        [System.Runtime.Versioning.SupportedOSPlatform("windows")]  //dodat dekorater
         protected virtual void ImageResize(string sourcePath, string destinstionPath, int width, int height)
         {
             if (string.IsNullOrEmpty(destinstionPath))

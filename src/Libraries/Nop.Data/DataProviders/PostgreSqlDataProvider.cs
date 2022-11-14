@@ -21,7 +21,7 @@ namespace Nop.Data.DataProviders
     {
         #region Fields
 
-        private static readonly Lazy<IDataProvider> _dataProvider = new(() => new LinqToDBPostgreSQLDataProvider(), true);
+        private static readonly Lazy<IDataProvider> _dataProvider = new(() => new LinqToDbPostgreSqlDataProvider(), true); //izmenjeno
 
         #endregion
 

@@ -20,7 +20,7 @@ namespace Nop.Services.Seo
         #region Fields
 
         private static readonly object _lock = new();
-        private static Dictionary<string, string> _seoCharacterTable;
+        private Dictionary<string, string> _seoCharacterTable; //izmenjeno
 
         private readonly ILanguageService _languageService;
         private readonly IRepository<UrlRecord> _urlRecordRepository;

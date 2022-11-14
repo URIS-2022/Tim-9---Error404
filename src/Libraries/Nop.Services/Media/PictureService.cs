@@ -429,11 +429,13 @@ namespace Nop.Services.Media
             lastPart = lastPart switch
             {
                 "pjpeg" => "jpg",
+                "jpeg" => "jpeg",
                 "bmp" => "bmp",
                 "gif" => "gif",
                 "x-png" or "png" => "png",
                 "tiff" => "tiff",
                 "x-icon" => "ico",
+                "webp" => "webp",
                 "svg+xml" => "svg",
                 _ => "",
             };
@@ -734,7 +736,7 @@ namespace Nop.Services.Media
             {
             }
 
-            return null;
+            return Task.FromResult<byte[]>(null); //izmenjeno
         }
 
         #endregion

@@ -7,6 +7,9 @@ namespace Nop.Core.Infrastructure
     /// </summary>
     public partial class EngineContext
     {
+        protected EngineContext()  //izmenjeno
+        {
+        }
         #region Methods
 
         /// <summary>

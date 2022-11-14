@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DocumentFormat.OpenXml.Office2010.Excel;
 using Nop.Core;
 using Nop.Core.Caching;
 using Nop.Core.Domain.Blogs;
@@ -98,7 +99,7 @@ namespace Nop.Services.Blogs
                     query = query.Where(b => languageId == b.LanguageId);
 
                 if (!string.IsNullOrEmpty(title))
-                    query = query.Where(b => b.Title.Contains(title));
+                    query = query.Where(b => b.Title.Contains(title)); 
 
                 if (!showHidden)
                 {
@@ -227,9 +228,9 @@ namespace Nop.Services.Blogs
         /// The task result contains the filtered posts
         /// </returns>
         public virtual async Task<IList<BlogPost>> GetPostsByDateAsync(IList<BlogPost> blogPosts, DateTime dateFrom, DateTime dateTo)
-        {
-            if (blogPosts == null)
-                throw new ArgumentNullException(nameof(blogPosts));
+        {   //kreiran novi public
+
+            ArgumentNullException.ThrowIfNull(blogPosts); //prvo remove if i dodato
 
             var rez = await blogPosts
                 .Where(p => dateFrom.Date <= (p.StartDateUtc ?? p.CreatedOnUtc) && (p.StartDateUtc ?? p.CreatedOnUtc).Date <= dateTo)

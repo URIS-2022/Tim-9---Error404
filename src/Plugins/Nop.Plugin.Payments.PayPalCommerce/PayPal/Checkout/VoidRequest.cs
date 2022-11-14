@@ -14,7 +14,10 @@ namespace PayPalCheckoutSdk.Payments
             {
                 Path = Path.Replace("{authorization_id}", Uri.EscapeDataString(Convert.ToString(authorizationId)));
             }
-            catch { }
+            catch 
+            {
+                //komentar
+            }
 
             ContentType = "application/json";
         }

@@ -3,7 +3,7 @@ using Nop.Web.Areas.Admin.Models.Settings;
 
 namespace Nop.Web.Areas.Admin.Validators
 {
-    public partial class ValidatorUtilities
+    public static partial class ValidatorUtilities //izmenjeno
     {
         public static bool PageSizeOptionsValidator(string value)
         {

@@ -53,7 +53,7 @@ namespace Nop.Data.Migrations
         /// <param name="processors">Collection of migration processors</param>
         /// <param name="processorsId">DatabaseType or DatabaseTypeAlias</param>
         /// <returns></returns>
-        protected static IMigrationProcessor FindGenerator(IList<IMigrationProcessor> processors,
+        protected IMigrationProcessor FindGenerator(IList<IMigrationProcessor> processors,
             string processorsId)
         {
             if (processors.FirstOrDefault(p =>

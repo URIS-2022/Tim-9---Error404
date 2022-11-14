@@ -51,7 +51,7 @@ namespace Nop.Web.Areas.Admin.Controllers
         private readonly ISettingService _settingService;
         private readonly IShippingPluginManager _shippingPluginManager;
         private readonly IUploadService _uploadService;
-        private readonly IWebHelper _webHelper;
+        //izmenjeno remove
         private readonly IWidgetPluginManager _widgetPluginManager;
         private readonly IWorkContext _workContext;
         private readonly MultiFactorAuthenticationSettings _multiFactorAuthenticationSettings;
@@ -79,7 +79,7 @@ namespace Nop.Web.Areas.Admin.Controllers
             ISettingService settingService,
             IShippingPluginManager shippingPluginManager,
             IUploadService uploadService,
-            IWebHelper webHelper,
+            //izmenjeno remove
             IWidgetPluginManager widgetPluginManager,
             IWorkContext workContext,
             MultiFactorAuthenticationSettings multiFactorAuthenticationSettings,
@@ -103,7 +103,7 @@ namespace Nop.Web.Areas.Admin.Controllers
             _settingService = settingService;
             _shippingPluginManager = shippingPluginManager;
             _uploadService = uploadService;
-            _webHelper = webHelper;
+            //izmenjeno remove
             _widgetPluginManager = widgetPluginManager;
             _workContext = workContext;
             _multiFactorAuthenticationSettings = multiFactorAuthenticationSettings;

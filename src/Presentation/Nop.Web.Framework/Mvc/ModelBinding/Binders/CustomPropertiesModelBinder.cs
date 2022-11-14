@@ -9,7 +9,7 @@ namespace Nop.Web.Framework.Mvc.ModelBinding.Binders
     /// <summary>
     /// Represents model binder for CustomProperties
     /// </summary>
-    [Obsolete]
+    [Obsolete("Dodata poruka")]
     public class CustomPropertiesModelBinder : IModelBinder
     {
         Task IModelBinder.BindModelAsync(ModelBindingContext bindingContext)

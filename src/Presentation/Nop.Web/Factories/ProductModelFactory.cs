@@ -495,9 +495,9 @@ namespace Nop.Web.Factories
                     {
                         //rental product
                         priceModel.OldPrice = await _priceFormatter.FormatRentalProductPeriodAsync(product, priceModel.OldPrice);
-                        priceModel.OldPriceValue = priceModel.OldPriceValue;
+                        //izmenjeno
                         priceModel.Price = await _priceFormatter.FormatRentalProductPeriodAsync(product, priceModel.Price);
-                        priceModel.PriceValue = priceModel.PriceValue;
+                        //izmenjeno
                     }
 
                     //property for German market

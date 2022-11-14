@@ -206,6 +206,24 @@ namespace Nop.Web.Framework.Security
                 var filePermission =
                     isOwner ? filePermissions[0] : (isInGroup ? filePermissions[1] : filePermissions[2]);
 
+                if(isOwner)
+                {
+                    filePermission = filePermissions[0];
+                }
+                else
+                {
+                    if(isInGroup)
+                    {
+                        filePermission = filePermissions[1];
+                    }
+                    else
+                    {
+                        filePermission = filePermissions[2];
+                    }
+                }
+                //dodato if
+
+
                 return CheckUserFilePermissions(filePermission, checkRead, checkWrite, checkModify, checkDelete);
             }
             catch

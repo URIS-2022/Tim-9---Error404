@@ -6,7 +6,7 @@ namespace Nop.Core
     /// <summary>
     ///  Represents the class implementation of cryptographic random number generator derive
     /// </summary>
-    public partial class SecureRandomNumberGenerator : RandomNumberGenerator, IDisposable
+    public partial class SecureRandomNumberGenerator : RandomNumberGenerator
     {
         #region Field
 
@@ -42,7 +42,7 @@ namespace Nop.Core
         {
             if (minValue > maxValue)
             {
-                throw new ArgumentException();
+                throw new ArgumentException(); //izmenjeno
             }
             return (int)Math.Floor(minValue + ((double)maxValue - minValue) * NextDouble());
         }

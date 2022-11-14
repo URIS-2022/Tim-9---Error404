@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Xml;
+using DocumentFormat.OpenXml.Office2010.Excel;
 using Nop.Core;
 using Nop.Core.Caching;
 using Nop.Core.Domain.Blogs;
@@ -624,8 +625,7 @@ namespace Nop.Services.Customers
             bool clearRewardPoints = true, bool clearShippingMethod = true,
             bool clearPaymentMethod = true)
         {
-            if (customer == null)
-                throw new ArgumentNullException();
+            ArgumentNullException.ThrowIfNull(customer); //izmenjeno remove if i dodato
 
             //clear entered coupon codes
             if (clearCouponCodes)

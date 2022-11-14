@@ -247,7 +247,7 @@ namespace Nop.Services.Tax
                     var shippingAddress = await _customerService.GetCustomerShippingAddressAsync(customer);
                     taxRateRequest.Address = shippingAddress;
                     break;
-                case TaxBasedOn.DefaultAddress:
+                //izmenjeno remove
                 default:
                     taxRateRequest.Address = await LoadDefaultTaxAddressAsync();
                     break;

@@ -255,12 +255,10 @@ namespace Nop.Services.ScheduleTasks
             // Protected implementation of Dispose pattern.
             protected virtual void Dispose(bool disposing)
             {
-                
                 if (_disposed)
                     return;
 
                 if (disposing)
-                    
                     lock (this)
                         _timer?.Dispose();
 

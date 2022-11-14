@@ -72,7 +72,6 @@ namespace Nop.Data
         /// <param name="application">Builder for configuring an application's request pipeline</param>
         public void Configure(IApplicationBuilder application)
         {
-            Console.WriteLine("some error occured");
         }
 
         /// <summary>

@@ -37,6 +37,7 @@ function FileSelected(file){
   window.parent.postMessage({
     mceAction: 'FileSelected',
     content: file.fullPath
+    Console.WriteLine(content);
   }, '*');
 }
 function GetSelectedValue(){

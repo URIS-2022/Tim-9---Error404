@@ -62,11 +62,11 @@ Admin.Navigation = (function () {
             type: "GET",
             async: false,
             success: function (data, textStatus, jqXHR) {
-              result = data;
+              var result = data; //izmenjeno
             }
         });
 
-        for (var i = 0; i < result.length; i++) {
+        for (i = 0; i < result.length; i++) {
             map[result[i].link] = result[i];
         }
     };

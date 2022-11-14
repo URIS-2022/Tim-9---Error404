@@ -7,7 +7,7 @@
 
     //we need to replace some specific symbols here
     var content = await card.RenderHtmlContentAsync();
-    content = content.Replace("</script>", "<\\/script>");
+    content = content.Replace("<script>", "</script>"); //izmenjeno
     card = Html.Raw(content);
 
     <script asp-location="None">

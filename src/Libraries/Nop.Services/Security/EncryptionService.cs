@@ -29,7 +29,7 @@ namespace Nop.Services.Security
 
         #region Utilities
 
-        private byte[] EncryptTextToMemory(string data, byte[] key, byte[] iv)
+        private static byte[] EncryptTextToMemory(string data, byte[] key, byte[] iv) //izmenjeno
         {
             using var ms = new MemoryStream();
             using (var cs = new CryptoStream(ms, TripleDES.Create().CreateEncryptor(key, iv), CryptoStreamMode.Write))
@@ -42,14 +42,14 @@ namespace Nop.Services.Security
             return ms.ToArray();
         }
 
-        private string DecryptTextFromMemory(byte[] data, byte[] key, byte[] iv)
+        private static string DecryptTextFromMemory(byte[] data, byte[] key, byte[] iv) //izmenjeno
         {
             using var ms = new MemoryStream(data);
             using var cs = new CryptoStream(ms, TripleDES.Create().CreateDecryptor(key, iv), CryptoStreamMode.Read);
             using var sr = new StreamReader(cs, Encoding.Unicode);
             return sr.ReadToEnd();
         }
-
+        
         #endregion
 
         #region Methods

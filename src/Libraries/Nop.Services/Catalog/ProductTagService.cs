@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DocumentFormat.OpenXml.Office2010.Excel;
 using Nop.Core;
 using Nop.Core.Caching;
 using Nop.Core.Domain.Catalog;
@@ -71,8 +72,7 @@ namespace Nop.Services.Catalog
             var mappingRecord = await _productProductTagMappingRepository.Table
                 .FirstOrDefaultAsync(pptm => pptm.ProductId == productId && pptm.ProductTagId == productTagId);
 
-            if (mappingRecord is null)
-                throw new Exception("Mapping record not found");
+            ArgumentNullException.ThrowIfNull(mappingRecord); //izmenjeno remove if
 
             await _productProductTagMappingRepository.DeleteAsync(mappingRecord);
         }
