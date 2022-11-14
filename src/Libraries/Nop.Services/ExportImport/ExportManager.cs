@@ -2326,7 +2326,7 @@ namespace Nop.Services.ExportImport
             using (var workbook = new XLWorkbook())
             {
                 // uncomment this line if you want the XML written out to the outputDir
-                //xlPackage.DebugMode = true; 
+                //promenjeno 
 
                 // get handles to the worksheets
                 // Worksheet names cannot be more than 31 characters

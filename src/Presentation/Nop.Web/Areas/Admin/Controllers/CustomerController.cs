@@ -1409,7 +1409,7 @@ namespace Nop.Web.Areas.Admin.Controllers
                     }
 
                     break;
-                case "week":
+                //promenjeno
                 default:
                     //week statistics
                     var weekAgoDt = nowDt.AddDays(-7);

@@ -1,4 +1,5 @@
-﻿using Nop.Web.Framework.Models;
+﻿using System;
+using Nop.Web.Framework.Models;
 using Nop.Web.Framework.Mvc.ModelBinding;
 
 namespace Nop.Plugin.MultiFactorAuth.GoogleAuthenticator.Models
@@ -6,9 +7,11 @@ namespace Nop.Plugin.MultiFactorAuth.GoogleAuthenticator.Models
     /// <summary>
     /// Represents plugin configuration model
     /// </summary>
-    public record ConfigurationModel : BaseNopModel 
+    public record ConfigurationModel : BaseNopModel
     {
         #region Ctor
+
+        [Obsolete]  //promenjeno
 
         public ConfigurationModel()
         {

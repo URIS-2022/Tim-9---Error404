@@ -33,7 +33,7 @@ namespace Nop.Web.Framework.Mvc.Filters
         /// <summary>
         /// Represents a filter that checks and updates affiliate of customer
         /// </summary>
-        private class CheckAffiliateFilter : IAsyncActionFilter
+        private sealed class CheckAffiliateFilter : IAsyncActionFilter  //promenjeno
         {
             #region Constants
 

@@ -1503,7 +1503,8 @@ namespace Nop.Plugin.Tax.Avalara.Services
                     customerExists = await ServiceClient
                         .GetCustomerAsync(_avalaraTaxSettings.CompanyId.Value, customer.Id.ToString(), null) is not null;
                 }
-                catch { }
+                catch { //promenjeno
+                }
                 if (!customerExists)
                     await CreateOrUpdateCustomerAsync(customer, _avalaraTaxSettings.CompanyId.Value, customerExists);
 

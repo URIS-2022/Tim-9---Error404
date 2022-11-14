@@ -19,7 +19,7 @@ namespace Nop.Web.Framework.Validators
 
         protected BaseNopValidator()
         {
-            PostInitialize();
+            //promenjeno
         }
 
         #endregion

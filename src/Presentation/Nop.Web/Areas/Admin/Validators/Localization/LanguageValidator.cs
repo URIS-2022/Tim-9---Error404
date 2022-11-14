@@ -20,7 +20,7 @@ namespace Nop.Web.Areas.Admin.Validators.Localization
                               {
                                   //let's try to create a CultureInfo object
                                   //if "DisplayLocale" is wrong, then exception will be thrown
-                                  var unused = new CultureInfo(x);
+                                 //promenjeno
                                   return true;
                               }
                               catch

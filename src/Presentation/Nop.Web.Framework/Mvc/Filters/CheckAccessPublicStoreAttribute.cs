@@ -41,7 +41,7 @@ namespace Nop.Web.Framework.Mvc.Filters
         /// <summary>
         /// Represents a filter that confirms access to public store
         /// </summary>
-        private class CheckAccessPublicStoreFilter : IAsyncAuthorizationFilter
+        private sealed class CheckAccessPublicStoreFilter : IAsyncAuthorizationFilter  //promenjeno
         {
             #region Fields
 

@@ -36,12 +36,12 @@
                 <table class="compare-products-table">
                     <tbody>
                         <tr class="remove-product">
-                            <td class="empty">&nbsp;</td>
+                            <th class="empty">&nbsp;</th>  <!--promenjeno-->
                             @foreach (var product in Model.Products)
                             {
-                                <td style="width: @columnWidth;">
+                                <th style="width: @columnWidth;">  <!--promenjeno-->
                                     <button type="button" class="button-2 remove-button" onclick="setLocation('@Url.RouteUrl("RemoveProductFromCompareList", new { productId = product.Id })')">@T("Common.Remove")</button>
-                                </td>
+                                </th>
                             }
                         </tr>
                         <tr class="product-picture">

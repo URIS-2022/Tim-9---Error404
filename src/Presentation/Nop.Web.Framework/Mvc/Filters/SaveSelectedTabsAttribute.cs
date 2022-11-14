@@ -55,7 +55,7 @@ namespace Nop.Web.Framework.Mvc.Filters
             #region Fields
 
             private readonly bool _ignoreFilter;
-            private bool _persistForTheNextRequest;
+            private readonly bool _persistForTheNextRequest;  //promenjeno
             private readonly IWebHelper _webHelper;
 
             #endregion

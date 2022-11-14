@@ -139,6 +139,8 @@ namespace Nop.Services.Media.RoxyFileman
         /// <param name="destinstionPath">Path to the destination image</param>
         /// <param name="width">Width</param>
         /// <param name="height">Height</param>
+        /// 
+        [System.Runtime.Versioning.SupportedOSPlatform("windows")] //promenjeno
         protected virtual void ImageResize(string sourcePath, string destinstionPath, int width, int height)
         {
             if (string.IsNullOrEmpty(destinstionPath))
@@ -225,7 +227,7 @@ namespace Nop.Services.Media.RoxyFileman
             var directoryPath = GetFullPath(await GetVirtualPathAsync(sourcePath));
 
             if (!_fileProvider.DirectoryExists(directoryPath))
-                throw new Exception(await GetLanguageResourceAsync("E_CopyDirInvalidPath"));
+                throw new ArgumentNullException(await GetLanguageResourceAsync("E_CopyDirInvalidPath"));  //promenjeno
 
             var newDirectoryPath = GetFullPath(await GetVirtualPathAsync($"{destinationPath.TrimEnd('/')}/{_fileProvider.GetDirectoryNameOnly(directoryPath)}"));
 

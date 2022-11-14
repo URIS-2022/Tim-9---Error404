@@ -37,7 +37,7 @@ namespace Nop.Web.Framework.Mvc.Filters
         /// <summary>
         /// Represents a filter that checks and applied discount coupon code to customer
         /// </summary>
-        private class CheckDiscountCouponFilter : IAsyncActionFilter
+        private sealed class CheckDiscountCouponFilter : IAsyncActionFilter  //promenjeno
         {
             #region Fields
 

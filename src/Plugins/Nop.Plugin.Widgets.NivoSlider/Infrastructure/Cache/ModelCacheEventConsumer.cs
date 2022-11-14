@@ -21,7 +21,7 @@ namespace Nop.Plugin.Widgets.NivoSlider.Infrastructure.Cache
         /// {0} : picture id
         /// {1} : connection type (http/https)
         /// </remarks>
-        private static CacheKey PICTURE_URL_MODEL_KEY = new("Nop.plugins.widgets.nivoslider.pictureurl-{0}-{1}", PICTURE_URL_PATTERN_KEY); //promenjeno
+        public static CacheKey PICTURE_URL_MODEL_KEY = new("Nop.plugins.widgets.nivoslider.pictureurl-{0}-{1}", PICTURE_URL_PATTERN_KEY); //nije promenjeno jer u uprotnom javlja gresku
         public const string PICTURE_URL_PATTERN_KEY = "Nop.plugins.widgets.nivoslider";
 
         private readonly IStaticCacheManager _staticCacheManager;

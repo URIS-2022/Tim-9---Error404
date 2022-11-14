@@ -49,7 +49,8 @@ namespace Nop.Plugin.Widgets.GoogleAnalytics.Api
             {
                 (await httpClient.GetAsync(url)).EnsureSuccessStatusCode();
             }
-            catch { }
+            catch { //promenjeno
+                  }
         }
 
         private string CreateParameterString()

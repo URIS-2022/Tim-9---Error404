@@ -431,7 +431,7 @@ namespace Nop.Services.Media
                 "pjpeg" => "jpg",
                 "jpeg" => "jpeg",
                 "bmp" => "bmp",
-                "gif" => "gif",
+                //promenjeno
                 "x-png" or "png" => "png",
                 "tiff" => "tiff",
                 "x-icon" => "ico",

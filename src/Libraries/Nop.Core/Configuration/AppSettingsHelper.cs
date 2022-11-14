@@ -11,7 +11,7 @@ namespace Nop.Core.Configuration
     /// <summary>
     /// Represents the app settings helper
     /// </summary>
-    public static partial class AppSettingsHelper //promenjeno
+    public partial class AppSettingsHelper //promenjeno
     {
         #region Fields
 
