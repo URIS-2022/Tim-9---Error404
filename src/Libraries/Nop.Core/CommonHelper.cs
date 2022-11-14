@@ -169,7 +169,7 @@ namespace Nop.Core
         /// <returns>Result</returns>
         public static bool ArraysEqual<T>(T[] a1, T[] a2)
         {
-            //also see Enumerable.SequenceEqual(a1, a2);
+            
             if (ReferenceEquals(a1, a2))
                 return true;
 
