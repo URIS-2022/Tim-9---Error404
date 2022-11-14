@@ -143,7 +143,7 @@ function Directory(fullPath, numDirs, numFiles){
     return ret;
   };
   this.RestoreExpanded = function(expandedDirs){
-    for(i = 0; i < expandedDirs.length; i++){
+    for(var i = 0; i < expandedDirs.length; i++){
       var d = Directory.Parse(expandedDirs[i]);
       if(d)
         d.Expand(true);

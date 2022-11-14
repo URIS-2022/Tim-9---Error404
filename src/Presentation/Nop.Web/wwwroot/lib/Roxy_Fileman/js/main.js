@@ -43,9 +43,6 @@ function selectDir(item){
     d.Select();
   }
 }
-function startDragDir(){
-
-}
 function startDragFile(){
   selectFile(this);
 }
@@ -429,7 +426,7 @@ function tooltipContent(){
   }
   else if(f.IsImage()){
     if(RoxyFilemanConf.GENERATETHUMB){
-      imgUrl = RoxyUtils.AddParam(RoxyFilemanConf.GENERATETHUMB, 'f', f.fullPath);
+      var imgUrl = RoxyUtils.AddParam(RoxyFilemanConf.GENERATETHUMB, 'f', f.fullPath);
       imgUrl = RoxyUtils.AddParam(imgUrl, 'width', RoxyFilemanConf.PREVIEW_THUMB_WIDTH);
       imgUrl = RoxyUtils.AddParam(imgUrl, 'height', RoxyFilemanConf.PREVIEW_THUMB_HEIGHT);
     }

@@ -434,7 +434,6 @@ namespace Nop.Services.Media
                 "x-png" or "png" => "png",
                 "tiff" => "tiff",
                 "x-icon" => "ico",
-                "webp" => "webp",
                 "svg+xml" => "svg",
                 _ => "",
             };

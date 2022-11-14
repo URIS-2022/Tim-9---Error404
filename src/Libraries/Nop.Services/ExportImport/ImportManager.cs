@@ -3037,7 +3037,7 @@ namespace Nop.Services.ExportImport
             public bool IsNew { get; set; }
         }
 
-        public partial class CategoryKey
+        public partial class CategoryKey 
         {
             /// <returns>A task that represents the asynchronous operation</returns>
             public static async Task<CategoryKey> CreateCategoryKeyAsync(Category category, ICategoryService categoryService, IList<Category> allCategories, IStoreMappingService storeMappingService)
