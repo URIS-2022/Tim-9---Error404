@@ -156,7 +156,7 @@ namespace Nop.Plugin.Shipping.UPS.Services
         /// <typeparam name="T">Type of object</typeparam>
         /// <param name="value">Object to serialize</param>
         /// <returns>XML string</returns>
-        private string ToXml<T>(T value)
+        private static string ToXml<T>(T value)
         {
             using var writer = new StringWriter();
             using var xmlWriter = new XmlTextWriter(writer) { Formatting = Formatting.Indented };
