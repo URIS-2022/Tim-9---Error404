@@ -1646,7 +1646,7 @@ namespace Nop.Web.Areas.Admin.Controllers
                 return AccessDeniedView();
 
             if (productId == 0)
-                throw new ArgumentException();
+                throw new ArgumentException("Insert valid id for product");
 
             //try to get a product with the specified id
             var product = await _productService.GetProductByIdAsync(productId)
