@@ -504,7 +504,7 @@ namespace Nop.Web.Controllers
             return isAvailable;
         }
 
-        private Task<bool> CheckVendorAvailabilityAsync(Vendor vendor)
+        private static Task<bool> CheckVendorAvailabilityAsync(Vendor vendor)
         {
             var isAvailable = true;
 

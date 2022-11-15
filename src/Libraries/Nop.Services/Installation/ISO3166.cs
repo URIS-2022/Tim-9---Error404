@@ -14,7 +14,7 @@ namespace Nop.Services.Installation
         /// </summary>
         /// <param name="codeISO"></param>
         /// <returns>ISO3166Country</returns>
-        public static ISO3166Country FromISOCode(int codeISO)
+        public static Iso3166Country FromISOCode(int codeISO)
         {
             return GetCollection().FirstOrDefault(p => p.NumericCode == codeISO);
         }
@@ -24,7 +24,7 @@ namespace Nop.Services.Installation
         /// </summary>
         /// <param name="countryCode"></param>
         /// <returns>ISO3166Country</returns>
-        public static ISO3166Country FromCountryCode(string countryCode)
+        public static Iso3166Country FromCountryCode(string countryCode)
         {
             return GetCollection().FirstOrDefault(p => p.Alpha2 == countryCode);
         }
@@ -305,9 +305,9 @@ namespace Nop.Services.Installation
     /// <summary>
     /// Representation of an ISO3166-1 Country
     /// </summary>
-    public partial class ISO3166Country
+    public partial class Iso3166Country
     {
-        public ISO3166Country(string name, string alpha2, string alpha3, int numericCode, string[] dialCodes = null, bool subjectToVat = false, IEnumerable<LocalizationInfo> localizationInfo = null)
+        public Iso3166Country(string name, string alpha2, string alpha3, int numericCode, string[] dialCodes = null, bool subjectToVat = false, IEnumerable<LocalizationInfo> localizationInfo = null)
         {
             Name = name;
             Alpha2 = alpha2;

@@ -70,7 +70,7 @@ namespace Nop.Plugin.Widgets.GoogleAnalytics
             _widgetPluginManager = widgetPluginManager;
         }
 
-        private string FixIllegalJavaScriptChars(string text)
+        private static string FixIllegalJavaScriptChars(string text)
         {
             if (string.IsNullOrEmpty(text))
                 return text;

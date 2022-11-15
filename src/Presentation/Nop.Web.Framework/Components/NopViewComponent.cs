@@ -13,7 +13,7 @@ namespace Nop.Web.Framework.Components
     /// </summary>
     public abstract partial class NopViewComponent : ViewComponent
     {
-        private void PublishModelPrepared<TModel>(TModel model)
+        private static void PublishModelPrepared<TModel>(TModel model)
         {
             //Components are not part of the controller life cycle.
             //Hence, we could no longer use Action Filters to intercept the Models being returned
