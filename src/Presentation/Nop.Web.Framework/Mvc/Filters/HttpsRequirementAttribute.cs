@@ -44,7 +44,7 @@ namespace Nop.Web.Framework.Mvc.Filters
         /// <summary>
         /// Represents a filter confirming that checks whether current connection is secured and properly redirect if necessary
         /// </summary>
-        private class HttpsRequirementFilter : IAsyncAuthorizationFilter
+        private sealed class HttpsRequirementFilter : IAsyncAuthorizationFilter
         {
             #region Fields
 
