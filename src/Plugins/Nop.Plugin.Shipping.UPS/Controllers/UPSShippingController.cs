@@ -66,7 +66,7 @@ namespace Nop.Plugin.Shipping.UPS.Controllers
                 return AccessDeniedView();
 
             //prepare common model
-            var model = new UpsShippingModel  //izmenjeno ups
+            var model = new UPSShippingModel
             {
                 AccountNumber = _upsSettings.AccountNumber,
                 AccessKey = _upsSettings.AccessKey,
@@ -122,7 +122,7 @@ namespace Nop.Plugin.Shipping.UPS.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Configure(UpsShippingModel model) //izmenjeno UPS
+        public async Task<IActionResult> Configure(UPSShippingModel model)
         {
             //whether user has the authority to manage configuration
             if (!await _permissionService.AuthorizeAsync(StandardPermissionProvider.ManageShippingSettings))

@@ -6,7 +6,7 @@ namespace Nop.Plugin.Shipping.UPS
     /// <summary>
     /// Represents settings of the UPS shipping plugin
     /// </summary>
-    public class UPSSettings : ISettings
+    public class UPSSettings : ISettings 
     {
         /// <summary>
         /// Gets or sets the account number

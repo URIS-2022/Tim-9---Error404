@@ -1,11 +1,9 @@
-using System;
-
 namespace Nop.Core.Domain.Messages
 {
     /// <summary>
     /// Email unsubscribed event
     /// </summary>
-    public partial class EmailUnsubscribedEvent : IEquatable<EmailUnsubscribedEvent>
+    public partial class EmailUnsubscribedEvent
     {
         /// <summary>
         /// Ctor

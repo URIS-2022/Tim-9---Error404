@@ -147,7 +147,7 @@ var FileTypes = new Array();
 FileTypes['image'] = new Array('jpg', 'jpeg', 'png', 'gif');
 FileTypes['media'] = new Array('avi', 'flv', 'swf', 'wmv', 'mp3', 'wma', 'mpg','mpeg');
 FileTypes['document'] = new Array('doc', 'docx', 'txt', 'rtf', 'pdf', 'xls', 'mdb','html','htm','db');
-function RoxyUtils(){}
+//obrisano
 RoxyUtils.FixPath = function(path){
   if(!path)
     return '';
@@ -205,7 +205,7 @@ RoxyUtils.GetFilename = function(path){
   return ret;
 };
 RoxyUtils.MakePath = function(){
-  ret = '';
+  var ret = ''; //promenjeno
   if(arguments && arguments.length > 0){
     for(var i = 0; i < arguments.length; i++){
       ret += ($.isArray(arguments[i])?arguments[i].join('/'):arguments[i]);

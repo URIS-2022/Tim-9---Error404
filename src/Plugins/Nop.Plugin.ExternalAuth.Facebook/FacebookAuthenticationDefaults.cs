@@ -3,7 +3,7 @@
     /// <summary>
     /// Represents plugin constants
     /// </summary>
-    public static class FacebookAuthenticationDefaults
+    public class FacebookAuthenticationDefaults
     {
         /// <summary>
         /// Gets a plugin system name

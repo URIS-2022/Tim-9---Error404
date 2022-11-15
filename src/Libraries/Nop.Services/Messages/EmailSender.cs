@@ -131,7 +131,7 @@ namespace Nop.Services.Messages
         /// <returns>A task that represents the asynchronous operation</returns>
         public virtual async Task SendEmailAsync(EmailAccount emailAccount, string subject, string body,
             string fromAddress, string fromName, string toAddress, string toName,
-            string replyToAddress = null, string replyToName = null, //izmenjeno
+            string replyTo = null, string replyToName = null,
             IEnumerable<string> bcc = null, IEnumerable<string> cc = null,
             string attachmentFilePath = null, string attachmentFileName = null,
             int attachedDownloadId = 0, IDictionary<string, string> headers = null)
@@ -141,9 +141,9 @@ namespace Nop.Services.Messages
             message.From.Add(new MailboxAddress(fromName, fromAddress));
             message.To.Add(new MailboxAddress(toName, toAddress));
 
-            if (!string.IsNullOrEmpty(replyToAddress))
+            if (!string.IsNullOrEmpty(replyTo))
             {
-                message.ReplyTo.Add(new MailboxAddress(replyToName, replyToAddress));
+                message.ReplyTo.Add(new MailboxAddress(replyToName, replyTo));
             }
 
             //BCC

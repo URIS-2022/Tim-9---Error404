@@ -331,7 +331,7 @@ function Directory(fullPath, numDirs, numFiles){
     }
     var url = RoxyUtils.AddParam(RoxyFilemanConf.COPYDIR, 'd', this.fullPath);
     url = RoxyUtils.AddParam(url, 'n', newPath);
-    var item = this;
+    
     var ret = false;
     $.ajax({
         url: url,

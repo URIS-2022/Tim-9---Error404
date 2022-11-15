@@ -378,7 +378,7 @@ namespace Nop.Web.Controllers
             if (forum == null)
                 return RedirectToRoute("Boards");
 
-            if (!await _forumService.IsCustomerAllowedToCreateTopicAsync(await _workContext.GetCurrentCustomerAsync(), forum)) //izmenjeno ==false sa !
+            if (await _forumService.IsCustomerAllowedToCreateTopicAsync(await _workContext.GetCurrentCustomerAsync(), forum) == false)
                 return Challenge();
 
             var model = new EditForumTopicModel();

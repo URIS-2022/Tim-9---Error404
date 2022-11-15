@@ -43,6 +43,9 @@ function selectDir(item){
     d.Select();
   }
 }
+function startDragDir(){
+
+}
 function startDragFile(){
   selectFile(this);
 }

@@ -41,7 +41,7 @@ namespace Nop.Web.Framework.Mvc.Filters
         /// <summary>
         /// Represents a filter that confirms access to the admin panel
         /// </summary>
-        private class AuthorizeAdminFilter : IAsyncAuthorizationFilter
+        private sealed class AuthorizeAdminFilter : IAsyncAuthorizationFilter
         {
             #region Fields
 
@@ -87,10 +87,10 @@ namespace Nop.Web.Framework.Mvc.Filters
                     return;
 
                 //there is AdminAuthorizeFilter, so check access
-                if (context.Filters.Any(filter => filter is AuthorizeAdminFilter) && !await _permissionService.AuthorizeAsync(StandardPermissionProvider.AccessAdminPanel))
+                if (context.Filters.Any(filter => filter is AuthorizeAdminFilter))
                 {
                     //authorize permission of access to the admin area
-                    //spojena dva if-a &&
+                    if (!await _permissionService.AuthorizeAsync(StandardPermissionProvider.AccessAdminPanel))
                         context.Result = new ChallengeResult();
                 }
             }

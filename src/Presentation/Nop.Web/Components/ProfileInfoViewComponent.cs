@@ -22,7 +22,7 @@ namespace Nop.Web.Components
         {
             var customer = await _customerService.GetCustomerByIdAsync(customerProfileId);
             if (customer == null)
-                ArgumentNullException.ThrowIfNull(customer); //izmenjeno remove if i dodato
+                throw new ArgumentNullException(nameof(customer));
 
             var model = await _profileModelFactory.PrepareProfileInfoModelAsync(customer);
             return View(model);

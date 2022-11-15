@@ -22,7 +22,7 @@ namespace Nop.Plugin.Tax.Avalara.Data
         private readonly AvalaraTaxSettings _avalaraTaxSettings;
         private readonly ILanguageService _languageService;
         private readonly ILocalizationService _localizationService;
-        //izmenjeno remove
+        private readonly IScheduleTaskService _scheduleTaskService;
         private readonly ISettingService _settingService;
 
         #endregion
@@ -32,13 +32,13 @@ namespace Nop.Plugin.Tax.Avalara.Data
         public ScheduleTaskMigration(AvalaraTaxSettings avalaraTaxSettings,
             ILanguageService languageService,
             ILocalizationService localizationService,
-            //izmenjeno remove
+            IScheduleTaskService scheduleTaskService,
             ISettingService settingService)
         {
             _avalaraTaxSettings = avalaraTaxSettings;
             _languageService = languageService;
             _localizationService = localizationService;
-            //izmenjeno remove
+            _scheduleTaskService = scheduleTaskService;
             _settingService = settingService;
         }
 

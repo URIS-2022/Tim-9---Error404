@@ -82,7 +82,7 @@ namespace Nop.Plugin.Widgets.FacebookPixel.Controllers
         /// Prepare list of available public widget zones
         /// </summary>
         /// <returns>Available widget zones</returns>
-        public IList<SelectListItem> PreparePublicWidgetZones()
+        public static IList<SelectListItem> PreparePublicWidgetZones() //promenjeno
         {
             return typeof(PublicWidgetZones)
                 .GetProperties(BindingFlags.Public | BindingFlags.Static)

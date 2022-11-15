@@ -12,14 +12,14 @@
         <div class="table-wrapper">
             <table class="prices-table">
                 <tr>
-                    <td class="field-header">
+                    <th class="field-header">
                         @T("Products.TierPrices.Quantity")
-                    </td>
+                    </th>
                     @foreach (var tierPrice in Model)
                     {
-                        <td class="item-quantity">
+                        <th class="item-quantity">
                             @(tierPrice.Quantity)+
-                        </td>
+                        </th>
                     }
                 </tr>
                 <tr>

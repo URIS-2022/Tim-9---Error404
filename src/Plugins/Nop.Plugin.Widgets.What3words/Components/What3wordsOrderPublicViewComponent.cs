@@ -62,7 +62,8 @@ namespace Nop.Plugin.Widgets.What3words.Components
 
             var summaryModel = additionalData as ShoppingCartModel.OrderReviewDataModel;
             var detailsModel = additionalData as OrderDetailsModel;
-           //izmenjeno
+            if (summaryModel is null && detailsModel is null)
+                return Content(string.Empty);
 
             var addressId = 0;
             if (widgetZone.Equals(PublicWidgetZones.OrderSummaryBillingAddress))

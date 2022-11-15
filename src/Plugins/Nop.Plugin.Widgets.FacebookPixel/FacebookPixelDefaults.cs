@@ -25,7 +25,7 @@ namespace Nop.Plugin.Widgets.FacebookPixel
         /// <summary>
         /// Gets the generic attribute name to hide search block on the plugin configuration page
         /// </summary>
-        private static string HideSearchBlockAttribute = "FacebookPixel.HideSearchBlock";
+        public static string HideSearchBlockAttribute = "FacebookPixel.HideSearchBlock";
 
         /// <summary>
         /// Gets the route name of checkout endpoint

@@ -3,7 +3,7 @@
     /// <summary>
     /// Represents default values related to robots.txt
     /// </summary>
-    public static partial class RobotsTxtDefaults
+    public partial class RobotsTxtDefaults
     {
         /// <summary>
         /// Gets a name of custom robots file

@@ -16,7 +16,7 @@ namespace Nop.Plugin.Shipping.UPS
     /// <summary>
     /// Represents UPS computation method
     /// </summary>
-    public class UPSComputationMethod : BasePlugin, IShippingRateComputationMethod
+    public class UpsComputationMethod : BasePlugin, IShippingRateComputationMethod //promenjeno
     {
         #region Fields
 
@@ -29,7 +29,7 @@ namespace Nop.Plugin.Shipping.UPS
 
         #region Ctor
 
-        public UPSComputationMethod(ILocalizationService localizationService,
+        public UpsComputationMethod(ILocalizationService localizationService,
             ISettingService settingService,
             IWebHelper webHelper,
             UPSService upsService)
