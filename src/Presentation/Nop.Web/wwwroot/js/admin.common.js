@@ -213,7 +213,7 @@ function initNestedSetting(parentSettingName, parentSettingId, nestedSettingId) 
         $('#' + parentFormGroupId).addClass('parent-setting-advanced');
     }
 
-    //$(document).on('click', 'input[name="' + parentSettingName + '"]', toggleNestedSetting(parentSettingName, parentFormGroupId));
+    
     $('input[name="' + parentSettingName + '"]').click(
         { parentSettingName: parentSettingName, parentFormGroupId: parentFormGroupId }, parentSettingClick);
     toggleNestedSetting(parentSettingName, parentFormGroupId);

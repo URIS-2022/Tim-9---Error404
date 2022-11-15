@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Globalization;
 using System.Linq;
 using System.Net;
+using System.Text;
 using System.Text.RegularExpressions;
 using Nop.Core.Infrastructure;
 
@@ -257,7 +258,7 @@ namespace Nop.Core
         /// <returns>The converted value.</returns>
         public static T To<T>(object value)
         {
-            //return (T)Convert.ChangeType(value, typeof(T), CultureInfo.InvariantCulture);
+            
             return (T)To(value, typeof(T));
         }
 
@@ -268,14 +269,16 @@ namespace Nop.Core
         /// <returns>Converted string</returns>
         public static string ConvertEnum(string str)
         {
+            StringBuilder sb = new StringBuilder();
+
             if (string.IsNullOrEmpty(str))
                 return string.Empty;
             var result = string.Empty;
             foreach (var c in str)
                 if (c.ToString() != c.ToString().ToLowerInvariant())
-                    result += " " + c.ToString();
+                    sb.AppendFormat("{0}{1}{2}", result, " ", c.ToString());
                 else
-                    result += c.ToString();
+                    sb.AppendFormat("{0}{1}", result, c.ToString());
 
             //ensure no spaces (e.g. when the first letter is upper case)
             result = result.TrimStart();

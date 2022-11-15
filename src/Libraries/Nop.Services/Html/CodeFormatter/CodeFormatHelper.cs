@@ -6,11 +6,10 @@ namespace Nop.Services.Html.CodeFormatter
     /// <summary>
     /// Represents a code format helper
     /// </summary>
-    public partial class CodeFormatHelper
+    public static partial class CodeFormatHelper
     {
         #region Fields
 
-        //private static Regex regexCode1 = new Regex(@"(?<begin>\[code:(?<lang>.*?)(?:;ln=(?<linenumbers>(?:on|off)))?(?:;alt=(?<altlinenumbers>(?:on|off)))?(?:;(?<title>.*?))?\])(?<code>.*?)(?<end>\[/code\])", RegexOptions.Compiled | RegexOptions.CultureInvariant | RegexOptions.IgnoreCase | RegexOptions.Singleline);
         private static readonly Regex _regexHtml = new("<[^>]*>", RegexOptions.Compiled);
 
         private static readonly Regex _regexCode = new(@"\[code\](?<inner>(.*?))\[/code\]", RegexOptions.Compiled | RegexOptions.IgnoreCase);
