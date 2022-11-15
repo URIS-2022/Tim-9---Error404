@@ -158,8 +158,6 @@ namespace Nop.Core.Caching
         /// Performs application-defined tasks associated with freeing,
         /// releasing, or resetting unmanaged resources.
         /// </summary>
-       
-
         /// <summary>
         /// Get a cached item. If it's not in the cache yet, then load and cache it
         /// </summary>
@@ -350,6 +348,11 @@ namespace Nop.Core.Caching
                 //release lock even if action fails
                 await _distributedCache.RemoveAsync(resource);
             }
+        }
+
+        public void Dispose()
+        {
+            throw new NotImplementedException();
         }
 
         #endregion

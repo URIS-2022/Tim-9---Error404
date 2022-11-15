@@ -14,9 +14,7 @@ namespace Nop.Web.Framework.Mvc.ModelBinding.Binders
     {
         IModelBinder IModelBinderProvider.GetBinder(ModelBinderProviderContext context)
         {
-            var propertyBinders = context.Metadata.Properties
-                    .ToDictionary(modelProperty => modelProperty, modelProperty => context.CreateBinder(modelProperty));
-
+          
             if (context.Metadata.ModelType == typeof(Dictionary<string, object>) && context.Metadata.PropertyName == nameof(BaseNopModel.CustomProperties))
                 return new CustomPropertiesModelBinder();
             else
