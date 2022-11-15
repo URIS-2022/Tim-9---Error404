@@ -1055,7 +1055,7 @@ td.k-state-focused.k-state-selected {
 .k-numerictextbox .k-select .k-i-arrow-n:before,
 .k-numerictextbox .k-select .k-i-arrow-s:before {
   color: #444;
-  font-family: 'Serif';
+  font-family: Serif;
   height: 17px;
   line-height: 17px;
   font-size: 9px;
