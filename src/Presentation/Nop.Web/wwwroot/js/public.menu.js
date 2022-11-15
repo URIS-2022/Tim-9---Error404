@@ -118,11 +118,11 @@
     },
 
     categoryList: function (data, isTopMenu) {
-        listItems = [];
+        var listItems = [];
 
         let self = this;
 
-        for (i = 0; i < data.length; i++) {
+        for (var i = 0; i < data.length; i++) {
             if (!data[i].IncludeInTopMenu) { continue; }
             listItems.push(self.categoryLine(data[i], isTopMenu));
         }

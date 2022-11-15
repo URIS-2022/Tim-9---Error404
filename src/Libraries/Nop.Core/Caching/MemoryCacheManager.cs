@@ -22,7 +22,7 @@ namespace Nop.Core.Caching
         private readonly IMemoryCache _memoryCache;
 
         private static readonly ConcurrentDictionary<string, CancellationTokenSource> _prefixes = new();
-        private static CancellationTokenSource _clearToken = new();
+        private static CancellationTokenSource _clearToken = new CancellationTokenSource();
 
         #endregion
 
@@ -287,7 +287,7 @@ namespace Nop.Core.Caching
             _clearToken.Cancel();
             _clearToken.Dispose();
 
-            _clearToken = new CancellationTokenSource();
+            
 
             foreach (var prefix in _prefixes.Keys.ToList())
             {

@@ -666,6 +666,7 @@ namespace Nop.Services.Media
                         }
                         catch
                         {
+                            Console.WriteLine("Some error occured");
                         }
                     }
 

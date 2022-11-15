@@ -1174,7 +1174,7 @@ namespace Nop.Web.Controllers
             var oldCustomerModel = new CustomerInfoModel();
 
             //get customer info model before changes for gdpr log
-            if (_gdprSettings.GdprEnabled & _gdprSettings.LogUserProfileChanges)
+            if (_gdprSettings.GdprEnabled && _gdprSettings.LogUserProfileChanges)
                 oldCustomerModel = await _customerModelFactory.PrepareCustomerInfoModelAsync(oldCustomerModel, customer, false);
 
             //custom customer attributes

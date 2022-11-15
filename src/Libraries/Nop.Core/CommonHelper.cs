@@ -169,7 +169,7 @@ namespace Nop.Core
         /// <returns>Result</returns>
         public static bool ArraysEqual<T>(T[] a1, T[] a2)
         {
-            //also see Enumerable.SequenceEqual(a1, a2);
+            
             if (ReferenceEquals(a1, a2))
                 return true;
 
@@ -257,7 +257,7 @@ namespace Nop.Core
         /// <returns>The converted value.</returns>
         public static T To<T>(object value)
         {
-            //return (T)Convert.ChangeType(value, typeof(T), CultureInfo.InvariantCulture);
+            
             return (T)To(value, typeof(T));
         }
 
