@@ -43,9 +43,7 @@ namespace Nop.Core.Caching
 
         #region Utilities
 
-        /// <summary>
-        /// Clear all data on this instance
-        /// </summary>
+       
         /// <returns>A task that represents the asynchronous operation</returns>
         protected void ClearInstanceData()
         {
