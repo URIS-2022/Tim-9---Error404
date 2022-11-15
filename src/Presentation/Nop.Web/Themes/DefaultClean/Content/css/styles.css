@@ -704,7 +704,6 @@ label, label + * {
   border-bottom: 1px solid #ddd;
   overflow: hidden;
   background-color: #eee;
-  padding: 10px 15px;
   /*override jQuery UI styles, do not delete doubled properties*/
   border-width: 0 0 1px;
   border-radius: 0;

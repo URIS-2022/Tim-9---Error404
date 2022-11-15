@@ -273,8 +273,8 @@ namespace Nop.Data
         /// The task result contains the entity entries
         /// </returns>
         public virtual async Task<IList<TEntity>> GetAllAsync(
-            Func<IQueryable<TEntity>, Task<IQueryable<TEntity>>> func = null,
-            Func<IStaticCacheManager, Task<CacheKey>> getCacheKey = null, bool includeDeleted = true)
+            Func<IQueryable<TEntity>, Task<IQueryable<TEntity>>> func,
+            Func<IStaticCacheManager, Task<CacheKey>> getCacheKey, bool includeDeleted = true)
         {
             async Task<IList<TEntity>> getAllAsync()
             {
