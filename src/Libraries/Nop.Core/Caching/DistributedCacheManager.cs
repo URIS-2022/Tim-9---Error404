@@ -351,6 +351,11 @@ namespace Nop.Core.Caching
             }
         }
 
+        public void Dispose()
+        {
+            throw new NotImplementedException();
+        }
+
         #endregion
     }
 }
