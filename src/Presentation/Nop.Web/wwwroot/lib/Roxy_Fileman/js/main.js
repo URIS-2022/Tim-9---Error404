@@ -425,7 +425,7 @@ function tooltipContent(){
   var html = '';
   var f = File.Parse($(this).attr('data-path'));
   if($('#hdViewType').val() == 'thumb' && f.IsImage()){
-    html = f.fullPath+'<br><span class="filesize">'+t('Size')+': '+RoxyUtils.FormatFileSize(f.size) + ' '+t('Dimensions')+': '+f.width+'x'+f.height+'</span>';
+   var html = f.fullPath+'<br><span class="filesize">'+t('Size')+': '+RoxyUtils.FormatFileSize(f.size) + ' '+t('Dimensions')+': '+f.width+'x'+f.height+'</span>';
   }
   else if(f.IsImage()){
     if(RoxyFilemanConf.GENERATETHUMB){

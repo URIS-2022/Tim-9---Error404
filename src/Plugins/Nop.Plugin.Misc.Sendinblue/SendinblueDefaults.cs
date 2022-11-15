@@ -26,7 +26,7 @@ namespace Nop.Plugin.Misc.Sendinblue
         /// <summary>
         /// Gets a URL to edit message template on Sendinblue account
         /// </summary>
-        public static string EditMessageTemplateUrl = "https://my.sendinblue.com/camp/template/{0}/message-setup?tap_a=30591-fb13f0&tap_s=840216-5153c7";
+        public const string EditMessageTemplateUrl = "https://my.sendinblue.com/camp/template/{0}/message-setup?tap_a=30591-fb13f0&tap_s=840216-5153c7";
 
         /// <summary>
         /// Gets a name of the route to the import contacts callback
@@ -341,26 +341,26 @@ namespace Nop.Plugin.Misc.Sendinblue
         /// <summary>
         /// Generic attribute name to hide general settings block on the plugin configuration page
         /// </summary>
-        public static string HideGeneralBlock = "SendinbluePage.HideGeneralBlock";
+       public const  string HideGeneralBlock = "SendinbluePage.HideGeneralBlock";
 
         /// <summary>
         /// Generic attribute name to hide synchronization block on the plugin configuration page
         /// </summary>
-        public static string HideSynchronizationBlock = "SendinbluePage.HideSynchronizationBlock";
+       public const string HideSynchronizationBlock = "SendinbluePage.HideSynchronizationBlock";
 
         /// <summary>
         /// Generic attribute name to hide transactional block on the plugin configuration page
         /// </summary>
-        public static string HideTransactionalBlock = "SendinbluePage.HideTransactionalBlock";
+       public const string HideTransactionalBlock = "SendinbluePage.HideTransactionalBlock";
 
         /// <summary>
         /// Generic attribute name to hide SMS block on the plugin configuration page
         /// </summary>
-        public static string HideSmsBlock = "SendinbluePage.HideSmsBlock";
+      public  const string HideSmsBlock = "SendinbluePage.HideSmsBlock";
 
         /// <summary>
         /// Generic attribute name to hide marketing automation block on the plugin configuration page
         /// </summary>
-        public static string HideMarketingAutomationBlock = "SendinbluePage.HideMarketingAutomationBlock";
+       public const string HideMarketingAutomationBlock = "SendinbluePage.HideMarketingAutomationBlock";
     }
 }

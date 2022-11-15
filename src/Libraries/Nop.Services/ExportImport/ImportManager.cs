@@ -227,8 +227,7 @@ namespace Nop.Services.ExportImport
             using var stream = new FileStream(filePath, FileMode.OpenOrCreate);
             // ok, we can run the real code of the sample now
             using var workbook = new XLWorkbook(stream);
-            // uncomment this line if you want the XML written out to the outputDir
-            //xlPackage.DebugMode = true; 
+            // uncomment this line if you want the XML written out to the outputDir 
 
             // get handles to the worksheets
             var outWorksheet = workbook.Worksheets.Add(typeof(Product).Name);
@@ -2279,7 +2278,6 @@ namespace Nop.Services.ExportImport
                 lastLoadedProduct = product;
 
                 //update "HasTierPrices" and "HasDiscountsApplied" properties
-                //_productService.UpdateHasTierPricesProperty(product);
                 //_productService.UpdateHasDiscountsApplied(product);
             }
 
@@ -3037,7 +3035,7 @@ namespace Nop.Services.ExportImport
             public bool IsNew { get; set; }
         }
 
-        public partial class CategoryKey
+        public sealed class CategoryKey
         {
             /// <returns>A task that represents the asynchronous operation</returns>
             public static async Task<CategoryKey> CreateCategoryKeyAsync(Category category, ICategoryService categoryService, IList<Category> allCategories, IStoreMappingService storeMappingService)

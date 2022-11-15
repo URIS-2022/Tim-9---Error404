@@ -347,14 +347,15 @@ namespace Nop.Services.ExportImport
         /// </returns>
         protected virtual async Task<object> GetLimitedToStoresAsync(Product product)
         {
-            string limitedToStores = null;
+            StringBuilder limitedToStores = new StringBuilder();
+            
             foreach (var storeMapping in await _storeMappingService.GetStoreMappingsAsync(product))
             {
                 var store = await _storeService.GetStoreByIdAsync(storeMapping.StoreId);
 
-                limitedToStores += _catalogSettings.ExportImportRelatedEntitiesByName ? store.Name : store.Id.ToString();
+                limitedToStores.Append( _catalogSettings.ExportImportRelatedEntitiesByName ? store.Name : store.Id.ToString());
 
-                limitedToStores += ";";
+                limitedToStores.Append( ";");
             }
 
             return limitedToStores;
@@ -370,8 +371,7 @@ namespace Nop.Services.ExportImport
         /// </returns>
         protected virtual async Task<object> GetProductTagsAsync(Product product)
         {
-            string productTagNames = null;
-
+            StringBuilder productTagNames = new StringBuilder();
             var productTags = await _productTagService.GetAllProductTagsByProductIdAsync(product.Id);
 
             if (!productTags?.Any() ?? true)
@@ -379,11 +379,11 @@ namespace Nop.Services.ExportImport
 
             foreach (var productTag in productTags)
             {
-                productTagNames += _catalogSettings.ExportImportRelatedEntitiesByName
+                productTagNames.Append( _catalogSettings.ExportImportRelatedEntitiesByName
                     ? productTag.Name
-                    : productTag.Id.ToString();
+                    : productTag.Id.ToString());
 
-                productTagNames += ";";
+                productTagNames.Append( ";");
             }
 
             return productTagNames;

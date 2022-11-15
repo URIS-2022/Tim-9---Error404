@@ -467,7 +467,7 @@ function File(filePath, fileSize, modTime, w, h){
   this.width = (w? w: 0);
   this.height = (h? h: 0);
   this.Show = function(){
-    html = '<li data-path="'+this.fullPath+'" data-time="'+this.time+'" data-icon="'+this.icon+'" data-w="'+this.width+'" data-h="'+this.height+'" data-size="'+this.size+'" data-icon-big="'+(this.IsImage()?this.fullPath:this.bigIcon)+'" title="'+this.name+'">';
+   var html = '<li data-path="'+this.fullPath+'" data-time="'+this.time+'" data-icon="'+this.icon+'" data-w="'+this.width+'" data-h="'+this.height+'" data-size="'+this.size+'" data-icon-big="'+(this.IsImage()?this.fullPath:this.bigIcon)+'" title="'+this.name+'">';
     html += '<img src="'+this.icon+'" class="icon">';
     html += '<span class="time">'+RoxyUtils.FormatDate(new Date(this.time * 1000))+'</span>';
     html += '<span class="name">'+this.name+'</span>';
@@ -619,7 +619,7 @@ function File(filePath, fileSize, modTime, w, h){
       alert(t('E_ActionDisabled'));
       return;
     }
-    newFullPath = RoxyUtils.MakePath(newPath, this.name);
+   var newFullPath = RoxyUtils.MakePath(newPath, this.name);
     var url = RoxyUtils.AddParam(RoxyFilemanConf.MOVEFILE, 'f', this.fullPath);
     url = RoxyUtils.AddParam(url, 'n', newFullPath);
     var item = this;

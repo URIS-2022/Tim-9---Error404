@@ -168,7 +168,7 @@ namespace Nop.Services.ExportImport.Help
             get
             {
                 if (PropertyValue == null || !Guid.TryParse(PropertyValue.ToString(), out var rez))
-                    return default;
+                    return Guid.NewGuid();
                 return rez;
             }
         }
