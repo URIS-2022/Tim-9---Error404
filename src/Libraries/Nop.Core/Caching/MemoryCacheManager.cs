@@ -42,7 +42,7 @@ namespace Nop.Core.Caching
         /// </summary>
         /// <param name="key">Cache key</param>
         /// <returns>Cache entry options</returns>
-        private MemoryCacheEntryOptions PrepareEntryOptions(CacheKey key)
+        private static MemoryCacheEntryOptions PrepareEntryOptions(CacheKey key)
         {
             //set expiration time for the passed cache key
             var options = new MemoryCacheEntryOptions
