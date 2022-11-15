@@ -80,7 +80,7 @@ var Accordion = {
     },
 
     openNextSection: function (setAllow) {
-        for (var section in this.sections) {  //izmenjeno
+        for (section in this.sections) {
             var nextIndex = parseInt(section) + 1;
             if (this.sections[section].id == this.currentSectionId && this.sections[nextIndex]) {
                 if (setAllow) {

@@ -201,6 +201,7 @@ var Billing = {
 
   editAddress: function(url) {
     Billing.resetBillingForm();
+    //Billing.initializeStateSelect();
 
     var prefix = 'BillingNewAddress_';
     var selectedItem = $('#billing-address-select').children("option:selected").val();

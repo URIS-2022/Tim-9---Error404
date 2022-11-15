@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Reflection;
+using System.Text;
 using System.Text.RegularExpressions;
 
 namespace Nop.Core.Infrastructure
@@ -229,10 +230,11 @@ namespace Nop.Core.Infrastructure
             }
             catch (ReflectionTypeLoadException ex)
             {
+                StringBuilder sb = new StringBuilder(); //promenjeno
                 var msg = string.Empty;
                 foreach (var e in ex.LoaderExceptions)
-                    msg += e.Message + Environment.NewLine;
-
+                    sb.AppendFormat("{0}{1}{2}",msg,e.Message,Environment.NewLine); //promenjeno
+                 
                 var fail = new Exception(msg, ex);
                 Debug.WriteLine(fail.Message, fail);
 

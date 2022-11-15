@@ -549,7 +549,7 @@ i.false-icon {
 .admin-area-tour .shepherd-content .shepherd-text {
   font-size: 14px;
   padding: 1rem;
-  /*izmenjeno*/
+  font-size: 18px;
   line-height: 26px;
 }
 
@@ -1018,7 +1018,7 @@ td.k-state-focused.k-state-selected {
   display: inline-block;
   font-family: 'Glyphicons Halflings';
   font-style: normal;
-  font-weight: 400;
+  
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -1028,7 +1028,7 @@ td.k-state-focused.k-state-selected {
 .k-numerictextbox .k-select .k-i-arrow-n:before,
 .k-numerictextbox .k-select .k-i-arrow-s:before {
   color: #444;
-  font-family: 'Glyphicons Halflings', sans-serif; /*izmenjeno*/
+  font-family: 'Glyphicons Halflings';
   height: 17px;
   line-height: 17px;
   font-size: 9px;

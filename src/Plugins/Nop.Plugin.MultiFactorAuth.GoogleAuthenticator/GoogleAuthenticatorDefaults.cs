@@ -10,8 +10,9 @@ namespace Nop.Plugin.MultiFactorAuth.GoogleAuthenticator
         /// <summary>
         /// Gets a plugin system name
         /// </summary>
-        public static string SystemName = "MultiFactorAuth.GoogleAuthenticator"; //izmenjeno, nije funkcionalno
+        public static string SystemName = "MultiFactorAuth.GoogleAuthenticator";
 
+        
         /// <summary>
         /// Gets the configuration route name
         /// </summary>
@@ -40,7 +41,7 @@ namespace Nop.Plugin.MultiFactorAuth.GoogleAuthenticator
         /// <summary>
         /// Gets the generic attribute name to hide search block on the plugin configuration page
         /// </summary>
-        public static string HideSearchBlockAttribute = "GoogleAuthenticator.HideSearchBlock";
+        public static string HideSearchBlockAttribute = "GoogleAuthenticator.HideSearchBlock"; //promenjeno
 
         #endregion
     }

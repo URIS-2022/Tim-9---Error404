@@ -40,7 +40,7 @@ namespace Nop.Services.Blogs
         /// <param name="pageIndex">Page index</param>
         /// <param name="pageSize">Page size</param>
         /// <param name="showHidden">A value indicating whether to show hidden records</param>
-        /// <param name="title">Filter by blog post title</param> 
+        /// <param name="title">Filter by blog post title</param>
         /// <returns>
         /// A task that represents the asynchronous operation
         /// The task result contains the blog posts

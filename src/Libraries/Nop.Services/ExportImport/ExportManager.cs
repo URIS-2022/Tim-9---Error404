@@ -416,7 +416,6 @@ namespace Nop.Services.ExportImport
             }
             catch (ArgumentNullException)
             {
-                Console.WriteLine("Some error occured");
             }
 
             return !productAdvancedMode && !func(_productEditorSettings);

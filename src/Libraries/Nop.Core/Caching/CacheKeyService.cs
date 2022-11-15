@@ -16,7 +16,7 @@ namespace Nop.Core.Caching
         /// <summary>
         /// Gets an algorithm used to create the hash value of identifiers need to cache
         /// </summary>
-        private static string HashAlgorithm => "SHA1";
+        private string HashAlgorithm => "SHA1";
 
         #endregion
 

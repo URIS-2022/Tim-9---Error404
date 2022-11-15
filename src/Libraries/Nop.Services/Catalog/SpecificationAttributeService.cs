@@ -332,9 +332,9 @@ namespace Nop.Services.Catalog
         /// A task that represents the asynchronous operation
         /// The task result contains the specification attribute option
         /// </returns>
-        public virtual async Task<SpecificationAttributeOption> GetSpecificationAttributeOptionByIdAsync(int specificationAttributeOptionId)
+        public virtual async Task<SpecificationAttributeOption> GetSpecificationAttributeOptionByIdAsync(int specificationAttributeOption) //promenjeno
         {
-            return await _specificationAttributeOptionRepository.GetByIdAsync(specificationAttributeOptionId, cache => default);
+            return await _specificationAttributeOptionRepository.GetByIdAsync(specificationAttributeOption, cache => default);
         }
 
         /// <summary>

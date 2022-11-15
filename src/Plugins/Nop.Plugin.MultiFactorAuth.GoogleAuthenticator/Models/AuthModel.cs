@@ -1,4 +1,5 @@
-﻿using Nop.Web.Framework.Models;
+﻿using System;
+using Nop.Web.Framework.Models;
 using Nop.Web.Framework.Mvc.ModelBinding;
 
 namespace Nop.Plugin.MultiFactorAuth.GoogleAuthenticator.Models
@@ -6,6 +7,7 @@ namespace Nop.Plugin.MultiFactorAuth.GoogleAuthenticator.Models
     /// <summary>
     /// Represents authentication model
     /// </summary>
+    [Obsolete]
     public record AuthModel : BaseNopModel
     {
         public string SecretKey { get; set; }

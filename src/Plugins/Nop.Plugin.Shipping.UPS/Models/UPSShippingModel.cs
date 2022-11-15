@@ -5,11 +5,11 @@ using Nop.Web.Framework.Mvc.ModelBinding;
 
 namespace Nop.Plugin.Shipping.UPS.Models
 {
-    public record UpsShippingModel : BaseNopModel  //izmenjeno 
+    public record UPSShippingModel : BaseNopModel
     {
         #region Ctor
 
-        public UpsShippingModel() //izmenjeno UPS
+        public UPSShippingModel()
         {
             CarrierServices = new List<string>();
             AvailableCarrierServices = new List<SelectListItem>();

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
 using System.Linq;
-using System.Text;
 
 namespace Nop.Core.ComponentModel
 {
@@ -94,7 +93,6 @@ namespace Nop.Core.ComponentModel
         /// <returns>Result</returns>
         public override object ConvertTo(ITypeDescriptorContext context, CultureInfo culture, object value, Type destinationType)
         {
-            StringBuilder sb = new StringBuilder();
             if (destinationType != typeof(string))
                 return base.ConvertTo(context, culture, value, destinationType);
 
@@ -110,7 +108,7 @@ namespace Nop.Core.ComponentModel
                 result += $"{Convert.ToString(keyValue.Key, CultureInfo.InvariantCulture)}, {Convert.ToString(keyValue.Value, CultureInfo.InvariantCulture)}";
                 //don't add ; after the last element
                 if (counter != dictionary.Count - 1)
-                    sb.AppendFormat("{0}{1}",result, ";"); //izmenjeno
+                    result += ";";
                 counter++;
             }
 

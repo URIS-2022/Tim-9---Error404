@@ -27,9 +27,8 @@ namespace Nop.Plugin.Pickup.PickupInStore.Infrastructure
         /// Configure the using of added middleware
         /// </summary>
         /// <param name="application">Builder for configuring an application's request pipeline</param>
-        public void Configure(IApplicationBuilder application)  //izmenjeno
+        public void Configure(IApplicationBuilder application)
         {
-            //some comment      
         }
 
         /// <summary>

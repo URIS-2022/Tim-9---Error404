@@ -5,7 +5,7 @@
         @Html.Raw(T("Plugins.MultiFactorAuth.GoogleAuthenticator.Customer.Instruction"))
     </div>
     <div class="table-wrapper">
-        <table @*class="data-table"*@ summary=" "> <!--izmenjeno--!>
+        <table @*class="data-table"*@>
             <colgroup>
                 <col/>
                 <col width="80%"/>
@@ -16,7 +16,7 @@
                         <div class="qr-code-conteiner">
                             
                             <div class="qr-code-image">
-                                            <img src="@(Model.QrCodeImageUrl)" alt="Textual description" /> //izmenjeno
+                                <img src="@(Model.QrCodeImageUrl)" />
                             </div>
                         </div>
                     </td>

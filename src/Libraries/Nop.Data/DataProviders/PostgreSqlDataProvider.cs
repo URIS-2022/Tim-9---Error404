@@ -21,7 +21,7 @@ namespace Nop.Data.DataProviders
     {
         #region Fields
 
-        private static readonly Lazy<IDataProvider> _dataProvider = new(() => new LinqToDbPostgreSqlDataProvider(), true); //izmenjeno
+        private static readonly Lazy<IDataProvider> _dataProvider = new(() => new LinqToDBPostgreSQLDataProvider(), true);
 
         #endregion
 
@@ -130,7 +130,7 @@ namespace Nop.Data.DataProviders
             for (var i = 0; i <= triesToConnect; i++)
             {
                 if (i == triesToConnect)
-                    throw new Exception("Unable to connect to the new database. Please try one more time");
+                    throw new ArgumentNullException("Unable to connect to the new database. Please try one more time");//promenjeno
 
                 if (!DatabaseExists())
                 {

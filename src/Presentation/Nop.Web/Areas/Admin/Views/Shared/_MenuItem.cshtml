@@ -17,23 +17,21 @@
     var isActive = Model.ContainsSystemName(NopHtml.GetActiveMenuItemSystemName());
 }
 @if (!string.IsNullOrEmpty(url))
-{   
-    <ul>
-        <li class="nav-item">
+{
+    <li class="nav-item">
 
-            <a href="@url" @(isActive ? Html.Raw("class=\"nav-link active\"") : Html.Raw("class=\"nav-link\"")) @(Model.OpenUrlInNewTab ? Html.Raw(" target=\"_blank\"") : null)>
-             @if (!string.IsNullOrEmpty(Model.IconClass))
-              {
-                 <text>
-                     <i class="nav-icon @Url.Content(Model.IconClass)"></i>
-                 </text>
-              }
+        <a href="@url" @(isActive ? Html.Raw("class=\"nav-link active\"") : Html.Raw("class=\"nav-link\"")) @(Model.OpenUrlInNewTab ? Html.Raw(" target=\"_blank\"") : null)>
+            @if (!string.IsNullOrEmpty(Model.IconClass))
+            {
+                <text>
+                    <i class="nav-icon @Url.Content(Model.IconClass)"></i>
+                </text>
+            }
 
-             <p> @Model.Title</p>
+            <p> @Model.Title</p>
 
-            </a>
-        </li>
-    </ul>    //izmenjeno
+        </a>
+    </li>
 }
 else
 {

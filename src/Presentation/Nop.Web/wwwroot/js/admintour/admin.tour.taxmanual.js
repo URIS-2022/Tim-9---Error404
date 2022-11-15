@@ -72,7 +72,7 @@
       });
     }
 
-    //TODO: 'Manage tax categories' step
+    //obrisano
     //tour.addStep({
     //  title: 'Manage tax categories',
     //  text: 'Using the <b>Manage shipping methods</b> button you can add new shipping methods or delete the existing ones',

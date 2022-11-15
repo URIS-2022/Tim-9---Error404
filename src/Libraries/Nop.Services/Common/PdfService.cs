@@ -963,7 +963,7 @@ namespace Nop.Services.Common
 
             if (order.ShippingStatus != ShippingStatus.ShippingNotRequired)
             {
-                //cell = new PdfPCell();
+                //promenjeno
                 //cell.Border = Rectangle.NO_BORDER;
                 const string indent = "   ";
 
@@ -1648,7 +1648,7 @@ namespace Nop.Services.Common
                         productTable.AddCell(new Paragraph(" ", font));
 
                         //uncomment to render associated product description
-                        //string apDescription = associated_localizationService.GetLocalized(product, x => x.ShortDescription, lang.Id);
+                        //promenjeno
                         //if (!string.IsNullOrEmpty(apDescription))
                         //{
                         //    productTable.AddCell(new Paragraph(_htmlHelper.StripTags(_htmlHelper.ConvertHtmlToPlainText(apDescription)), font));

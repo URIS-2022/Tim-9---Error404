@@ -24,7 +24,7 @@
 <div class="upload-picture-block">
     <div class="picture-container">
         <div id="@(clientId + "image")" class="uploaded-image">
-            <img src="@(await pictureService.GetPictureUrlAsync(Model, pictureSize, true))" />
+            <img src="@(await pictureService.GetPictureUrlAsync(Model, pictureSize, true))" alt="Some textual description/> //dodato
         </div>
     </div>
     <div class="upload-button-container">

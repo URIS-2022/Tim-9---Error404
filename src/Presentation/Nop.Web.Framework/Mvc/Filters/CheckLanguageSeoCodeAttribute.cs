@@ -44,7 +44,7 @@ namespace Nop.Web.Framework.Mvc.Filters
         /// <summary>
         /// Represents a filter that checks SEO friendly URLs for multiple languages and properly redirect if necessary
         /// </summary>
-        private sealed class CheckLanguageSeoCodeFilter : IAsyncActionFilter  //sealed
+        private class CheckLanguageSeoCodeFilter : IAsyncActionFilter
         {
             #region Fields
 

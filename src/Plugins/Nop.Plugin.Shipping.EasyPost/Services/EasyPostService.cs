@@ -174,7 +174,9 @@ namespace Nop.Plugin.Shipping.EasyPost.Services
                                 tmpException.Errors?.Select(error => new Error { message = string.Join("; ", error.Message) }).ToList());
                         }
                     }
-                    catch { }
+                    catch (InvalidOperationException) //dodato
+                    {
+                    }
 
                     errorMessage = httpException.Message;
                     var fullMessage = $"Message: {httpException.Message}";

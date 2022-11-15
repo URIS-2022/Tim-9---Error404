@@ -15,11 +15,11 @@ namespace Nop.Web.Framework.Models
         /// <summary>
         /// Ctor
         /// </summary>
-        [Obsolete]
+        [Obsolete("message")] //promenjeno
         public BaseNopModel()
         {
             CustomProperties = new Dictionary<string, object>();
-            PostInitialize();
+            //obrisano
         }
 
         #endregion
@@ -55,7 +55,7 @@ namespace Nop.Web.Framework.Models
         /// Gets or sets property to store any custom values for models 
         /// </summary>
         [XmlIgnore]
-        [Obsolete]
+        [Obsolete("message")]
         public Dictionary<string, object> CustomProperties { get; set; }
 
         #endregion

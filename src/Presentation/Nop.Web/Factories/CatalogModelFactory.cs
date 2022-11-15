@@ -1888,7 +1888,7 @@ namespace Nop.Web.Factories
         /// <param name="model">Catalog products model</param>
         /// <param name="command">Model to get the catalog products</param>
         /// <returns>A task that represents the asynchronous operation</returns>
-        public virtual async Task PrepareSortingOptionsAsync(CatalogProductsModel model, CatalogProductsCommand command)
+        public virtual async Task PrepareSortingOptionsAsync(CatalogProductsModel pagingFilteringModel, CatalogProductsCommand command) //promenjeno
         {
             //get active sorting options
             var activeSortingOptionsIds = Enum.GetValues(typeof(ProductSortingEnum)).Cast<int>()
@@ -1900,20 +1900,20 @@ namespace Nop.Web.Factories
                 .OrderBy(option => option.Order).ToList();
 
             //set the default option
-            model.OrderBy = command.OrderBy;
+            pagingFilteringModel.OrderBy = command.OrderBy;
             command.OrderBy = orderedActiveSortingOptions.FirstOrDefault()?.Id ?? (int)ProductSortingEnum.Position;
 
             //ensure that product sorting is enabled
             if (!_catalogSettings.AllowProductSorting)
                 return;
 
-            model.AllowProductSorting = true;
-            command.OrderBy = model.OrderBy ?? command.OrderBy;
+            pagingFilteringModel.AllowProductSorting = true;
+            command.OrderBy = pagingFilteringModel.OrderBy ?? command.OrderBy;
 
             //prepare available model sorting options
             foreach (var option in orderedActiveSortingOptions)
             {
-                model.AvailableSortOptions.Add(new SelectListItem
+                pagingFilteringModel.AvailableSortOptions.Add(new SelectListItem
                 {
                     Text = await _localizationService.GetLocalizedEnumAsync((ProductSortingEnum)option.Id),
                     Value = option.Id.ToString(),

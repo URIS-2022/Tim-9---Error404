@@ -13,7 +13,7 @@ namespace Nop.Services.Caching
     /// <summary>
     /// Represents a redis distributed cache 
     /// </summary>
-    public class RedisCacheManager : DistributedCacheManager, IDisposable  //dodato
+    public class RedisCacheManager : DistributedCacheManager
     {
         #region Fields
 
