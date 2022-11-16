@@ -263,7 +263,7 @@ namespace Nop.Data.Migrations.UpgradeTo460
             //#3651
             if (!_dataProvider.GetTable<MessageTemplate>().Any(mt => string.Compare(mt.Name, MessageTemplateSystemNames.OrderProcessingCustomerNotification, StringComparison.InvariantCultureIgnoreCase) == 0))
             {
-                var manageConnectionStringPermission = _dataProvider.InsertEntity(
+                _dataProvider.InsertEntity(
                     new MessageTemplate
                     {
                         Name = MessageTemplateSystemNames.OrderProcessingCustomerNotification,

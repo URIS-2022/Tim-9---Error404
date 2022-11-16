@@ -16,7 +16,6 @@ namespace Nop.Data.Migrations
 
         public NopProcessorAccessor(IEnumerable<IMigrationProcessor> processors)
         {
-            ConfigureProcessor(processors.ToList());
         }
 
         #endregion

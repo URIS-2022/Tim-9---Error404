@@ -15,6 +15,8 @@ namespace Nop.Core
     {
         #region Methods
 
+        protected XmlHelper() { }
+
         /// <summary>
         /// XML Encode
         /// </summary>
