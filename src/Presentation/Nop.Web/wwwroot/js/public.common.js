@@ -10,7 +10,7 @@ function OpenWindow(query, w, h, scroll) {
 
     winprops = 'resizable=0, height=' + h + ',width=' + w + ',top=' + t + ',left=' + l + 'w';
     if (scroll) winprops += ',scrollbars=1';
-    var f = window.open(query, "_blank", winprops);
+    
 }
 
 function setLocation(url) {

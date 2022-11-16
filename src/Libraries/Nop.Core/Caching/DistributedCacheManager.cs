@@ -21,7 +21,7 @@ namespace Nop.Core.Caching
 
         protected readonly IDistributedCache _distributedCache;
         protected readonly ConcurrentDictionary<CacheKey, object> _items;
-        protected static readonly AsyncLock _locker;
+        protected static readonly AsyncLock _locker = new AsyncLock();
 
         protected delegate void OnKeyChanged(CacheKey key);
 
@@ -32,10 +32,7 @@ namespace Nop.Core.Caching
 
         #region Ctor
 
-        static DistributedCacheManager()
-        {
-            _locker = new AsyncLock();
-        }
+     
 
         protected DistributedCacheManager(AppSettings appSettings, IDistributedCache distributedCache) :base(appSettings)
         {
@@ -87,7 +84,7 @@ namespace Nop.Core.Caching
         /// </summary>
         /// <param name="key">Cache key</param>
         /// <returns>Cache entry options</returns>
-        private DistributedCacheEntryOptions PrepareEntryOptions(CacheKey key)
+        private static DistributedCacheEntryOptions PrepareEntryOptions(CacheKey key)
         {
             //set expiration time for the passed cache key
             var options = new DistributedCacheEntryOptions
@@ -161,10 +158,6 @@ namespace Nop.Core.Caching
         /// Performs application-defined tasks associated with freeing,
         /// releasing, or resetting unmanaged resources.
         /// </summary>
-        public void Dispose()
-        {
-        }
-
         /// <summary>
         /// Get a cached item. If it's not in the cache yet, then load and cache it
         /// </summary>
@@ -355,6 +348,11 @@ namespace Nop.Core.Caching
                 //release lock even if action fails
                 await _distributedCache.RemoveAsync(resource);
             }
+        }
+
+        public void Dispose()
+        {
+            throw new NotImplementedException();
         }
 
         #endregion

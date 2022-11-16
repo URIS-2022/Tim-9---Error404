@@ -107,6 +107,7 @@ namespace Nop.Core.Infrastructure
             //we use 'using' to close the file after it's created
             using (File.Create(path))
             {
+                Console.WriteLine("Some errors resolved");
             }
         }
 

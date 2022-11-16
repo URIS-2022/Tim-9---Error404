@@ -31,7 +31,7 @@
     <!-- We copy the entire \App_Data directory. But we ignore JSON files and data protection keys  -->
     <Content Include="App_Data\**" CopyToPublishDirectory="PreserveNewest" Exclude="App_Data\*.json" />
     <Content Remove="App_Data\*.json" />
-    <Content Update="App_Data\DataProtectionKeys\*.xml" CopyToPublishDirectory="Never" />
+    <Content Update="App_Data\DataProtectionKeys\*.xml" CopyToPublishDirectory="PreserveNewest" />
 
     <Compile Remove="Plugins\**;Themes\**" />
     <Content Remove="Plugins\**;Themes\**" />
@@ -69,7 +69,7 @@
       <!-- Get plugin description files to get plugin paths -->
       <PluginsDescription Include="$(MSBuildProjectDirectory)\Plugins\**\plugin.json;" />
       <!-- Get paths for all plugins -->
-      <PluginsFolders Include="@(PluginsDescription->'%(relativedir)')" />
+      <PluginsFolders Include="@(PluginsDescription-&gt;'%(relativedir)')" />
 
       <!-- Get paths for ClearPluginAssemblies project -->
       <ClearPluginAssemblies Include="$(MSBuildProjectDirectory)\..\..\Build\ClearPluginAssemblies.proj" />

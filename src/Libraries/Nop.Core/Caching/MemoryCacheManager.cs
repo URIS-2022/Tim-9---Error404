@@ -22,7 +22,7 @@ namespace Nop.Core.Caching
         private readonly IMemoryCache _memoryCache;
 
         private static readonly ConcurrentDictionary<string, CancellationTokenSource> _prefixes = new();
-        private static CancellationTokenSource _clearToken = new();
+        private static CancellationTokenSource _clearToken = new CancellationTokenSource();
 
         #endregion
 
@@ -42,7 +42,7 @@ namespace Nop.Core.Caching
         /// </summary>
         /// <param name="key">Cache key</param>
         /// <returns>Cache entry options</returns>
-        private MemoryCacheEntryOptions PrepareEntryOptions(CacheKey key)
+        private static MemoryCacheEntryOptions PrepareEntryOptions(CacheKey key)
         {
             //set expiration time for the passed cache key
             var options = new MemoryCacheEntryOptions
@@ -287,7 +287,7 @@ namespace Nop.Core.Caching
             _clearToken.Cancel();
             _clearToken.Dispose();
 
-            _clearToken = new CancellationTokenSource();
+            
 
             foreach (var prefix in _prefixes.Keys.ToList())
             {

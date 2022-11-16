@@ -251,7 +251,7 @@ namespace Nop.Services.Installation
             seName = seName.Trim().ToLowerInvariant();
 
             var sb = new StringBuilder();
-            foreach (var c in seName.ToCharArray())
+            foreach (var c in seName)
             {
                 var c2 = c.ToString();
                 if (okChars.Contains(c2))

@@ -26,10 +26,10 @@ namespace Nop.Services.Media
     {
         #region Fields
 
-        private static BlobContainerClient _blobContainerClient;
+        private BlobContainerClient _blobContainerClient;
         private static BlobServiceClient _blobServiceClient;
         private static bool _azureBlobStorageAppendContainerName;
-        private static bool _isInitialized;
+        private bool _isInitialized;
         private static string _azureBlobStorageConnectionString;
         private string _azureBlobStorageContainerName; //promenjeno
         private string _azureBlobStorageEndPoint; //promenjeno

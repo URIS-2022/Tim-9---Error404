@@ -6,7 +6,7 @@ namespace Nop.Services.Html.CodeFormatter
     /// <summary>
     /// Represents a code format helper
     /// </summary>
-    public partial class CodeFormatHelper
+    public static partial class CodeFormatHelper
     {
         #region Fields
 
