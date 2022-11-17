@@ -407,7 +407,6 @@ namespace Nop.Services.Catalog
                 //apply ACL constraints
                 manufacturersQuery = await _aclService.ApplyAcl(manufacturersQuery, customer);
 
-                query = query.Where(pm => manufacturersQuery.Any(m => m.Id == pm.ManufacturerId));
             }
 
             return await _staticCacheManager.GetAsync(key, query.ToList);

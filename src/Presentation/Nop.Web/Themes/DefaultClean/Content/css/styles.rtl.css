@@ -2748,7 +2748,7 @@ label, label + * {
 .ui-datepicker-title {
   position: relative;
   z-index: 0;
-  line-height: 32px;
+
   font-weight: bold;
   text-transform: uppercase;
   /*override jQuery UI styles, do not delete doubled properties*/

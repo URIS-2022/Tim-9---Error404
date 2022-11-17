@@ -62,7 +62,7 @@ Admin.Navigation = (function () {
             type: "GET",
             async: false,
             success: function (data, textStatus, jqXHR) {
-              result = data;
+              var result = data;
             }
         });
 

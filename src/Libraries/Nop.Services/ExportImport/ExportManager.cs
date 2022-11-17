@@ -317,6 +317,7 @@ namespace Nop.Services.ExportImport
         /// </returns>
         protected virtual async Task<object> GetManufacturersAsync(Product product)
         {
+            StringBuilder sb = new StringBuilder();
             string manufacturerNames = null;
             StringBuilder sbManufacturerNames = new StringBuilder();
             foreach (var pm in await _manufacturerService.GetProductManufacturersByProductIdAsync(product.Id, true))
@@ -328,10 +329,11 @@ namespace Nop.Services.ExportImport
                 }
                 else
                 {
-                    manufacturerNames += pm.ManufacturerId.ToString();
+                    sb.AppendFormat("{0}{1}", manufacturerNames, pm.ManufacturerId.ToString());
+                    
                 }
 
-                manufacturerNames += ";";
+                sb.AppendFormat("{0}{1}", manufacturerNames, ";");
             }
             manufacturerNames = sbManufacturerNames.ToString();
             return manufacturerNames;
@@ -347,6 +349,7 @@ namespace Nop.Services.ExportImport
         /// </returns>
         protected virtual async Task<object> GetLimitedToStoresAsync(Product product)
         {
+            StringBuilder sb = new StringBuilder();
             string limitedToStores = null;
             foreach (var storeMapping in await _storeMappingService.GetStoreMappingsAsync(product))
             {
@@ -354,7 +357,8 @@ namespace Nop.Services.ExportImport
 
                 limitedToStores += _catalogSettings.ExportImportRelatedEntitiesByName ? store.Name : store.Id.ToString();
 
-                limitedToStores += ";";
+                sb.AppendFormat("{0}{1}", limitedToStores, ";");
+                
             }
 
             return limitedToStores;
@@ -370,6 +374,7 @@ namespace Nop.Services.ExportImport
         /// </returns>
         protected virtual async Task<object> GetProductTagsAsync(Product product)
         {
+            StringBuilder sb = new StringBuilder();
             string productTagNames = null;
 
             var productTags = await _productTagService.GetAllProductTagsByProductIdAsync(product.Id);
@@ -383,7 +388,7 @@ namespace Nop.Services.ExportImport
                     ? productTag.Name
                     : productTag.Id.ToString();
 
-                productTagNames += ";";
+                sb.AppendFormat("{0}{1}", productTagNames, ";");
             }
 
             return productTagNames;

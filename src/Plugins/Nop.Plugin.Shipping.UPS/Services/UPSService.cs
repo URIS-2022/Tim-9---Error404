@@ -156,7 +156,7 @@ namespace Nop.Plugin.Shipping.UPS.Services
         /// <typeparam name="T">Type of object</typeparam>
         /// <param name="value">Object to serialize</param>
         /// <returns>XML string</returns>
-        private string ToXml<T>(T value)
+        private static string ToXml<T>(T value)
         {
             using var writer = new StringWriter();
             using var xmlWriter = new XmlTextWriter(writer) { Formatting = Formatting.Indented };
@@ -815,7 +815,7 @@ namespace Nop.Plugin.Shipping.UPS.Services
         /// <param name="height">Height</param>
         /// <param name="width">Width</param>
         /// <returns>Package size</returns>
-        private decimal GetPackageSize(decimal width, decimal length, decimal height)
+        private static decimal GetPackageSize(decimal width, decimal length, decimal height)
         {
             //To measure ground packages use the following formula: Length + 2x Width +2x Height. Details: https://www.ups.com/us/en/help-center/packaging-and-supplies/prepare-overize.page
             return length + width * 2 + height * 2;

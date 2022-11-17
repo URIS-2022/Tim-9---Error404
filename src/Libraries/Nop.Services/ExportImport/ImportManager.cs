@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
@@ -39,6 +40,7 @@ using Nop.Services.Shipping.Date;
 using Nop.Services.Stores;
 using Nop.Services.Tax;
 using Nop.Services.Vendors;
+using static LinqToDB.Reflection.Methods.LinqToDB.Insert;
 
 namespace Nop.Services.ExportImport
 {
@@ -228,7 +230,7 @@ namespace Nop.Services.ExportImport
             // ok, we can run the real code of the sample now
             using var workbook = new XLWorkbook(stream);
             // uncomment this line if you want the XML written out to the outputDir
-            //xlPackage.DebugMode = true; 
+      
 
             // get handles to the worksheets
             var outWorksheet = workbook.Worksheets.Add(typeof(Product).Name);
@@ -2377,7 +2379,7 @@ namespace Nop.Services.ExportImport
         }
 
         /// <summary>
-        /// Import states from TXT file
+       
         /// </summary>
         /// <param name="stream">Stream</param>
         /// <param name="writeLog">Indicates whether to add logging</param>
@@ -3035,7 +3037,7 @@ namespace Nop.Services.ExportImport
             public bool IsNew { get; set; }
         }
 
-        public partial class CategoryKey
+        public partial class CategoryKey : IEqualityComparer<CategoryKey>
         {
             /// <returns>A task that represents the asynchronous operation</returns>
             public static async Task<CategoryKey> CreateCategoryKeyAsync(Category category, ICategoryService categoryService, IList<Category> allCategories, IStoreMappingService storeMappingService)
@@ -3088,6 +3090,16 @@ namespace Nop.Services.ExportImport
             {
                 var other = obj as CategoryKey;
                 return other?.Equals(other) ?? false;
+            }
+
+            public bool Equals(CategoryKey x, CategoryKey y)
+            {
+                throw new NotImplementedException();
+            }
+
+            public int GetHashCode([DisallowNull] CategoryKey obj)
+            {
+                throw new NotImplementedException();
             }
         }
 

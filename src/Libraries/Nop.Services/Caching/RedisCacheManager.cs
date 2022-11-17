@@ -27,7 +27,7 @@ namespace Nop.Services.Caching
         public RedisCacheManager(AppSettings appSettings, IDistributedCache distributedCache) : base(appSettings,
             distributedCache)
         {
-            _connectionWrapper ??=
+            
                 new RedisConnectionWrapper(appSettings.Get<DistributedCacheConfig>().ConnectionString);
             _db = _connectionWrapper.GetDatabase();
         }

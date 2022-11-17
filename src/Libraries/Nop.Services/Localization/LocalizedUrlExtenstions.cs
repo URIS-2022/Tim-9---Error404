@@ -100,7 +100,6 @@ namespace Nop.Services.Localization
 
             //null validation is not required
             //if (string.IsNullOrEmpty(url))
-            //    return url;
 
             //remove application path from raw URL
             if (isRawPath && !string.IsNullOrEmpty(url))
