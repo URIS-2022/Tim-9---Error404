@@ -117,7 +117,7 @@ namespace Nop.Services.Messages
             await _subscriptionRepository.UpdateAsync(newsLetterSubscription);
             
             //Publish the subscription event 
-            if ((originalSubscription.Active == false && newsLetterSubscription.Active) ||
+            if ((!originalSubscription.Active && newsLetterSubscription.Active) ||
                 (newsLetterSubscription.Active && originalSubscription.Email != newsLetterSubscription.Email))
             {
                 //If the previous entry was false, but this one is true, publish a subscribe.

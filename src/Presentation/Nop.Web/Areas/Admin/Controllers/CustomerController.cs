@@ -1583,9 +1583,6 @@ namespace Nop.Web.Areas.Admin.Controllers
 
             try
             {
-                //log
-                //_gdprService.InsertLog(customer, 0, GdprRequestType.ExportData, await _localizationService.GetResource("Gdpr.Exported"));
-                //export
                 //export
                 var store = await _storeContext.GetCurrentStoreAsync();
                 var bytes = await _exportManager.ExportCustomerGdprInfoToXlsxAsync(customer, store.Id);

@@ -22,7 +22,7 @@ namespace Nop.Web.Framework.Mvc.ModelBinding.Binders
             var result = new Dictionary<string, object>();
             if (bindingContext.HttpContext.Request.Method == "POST")
             {
-                var keys = bindingContext.HttpContext.Request.Form.Keys.ToList().Where(x => x.IndexOf(modelName) == 0);
+                var keys = bindingContext.HttpContext.Request.Form.Keys.AsEnumerable().Where(x => x.IndexOf(modelName) == 0);
 
                 if (keys != null && keys.Any())
                 {

@@ -31,7 +31,7 @@ namespace Nop.Web.Framework.Mvc.Filters
 
         #region Nested filter
 
-        private class ForceMultiFactorAuthenticationFilter : IAsyncActionFilter
+        private sealed class ForceMultiFactorAuthenticationFilter : IAsyncActionFilter
         {
             #region Fields
 

@@ -541,11 +541,11 @@ namespace Nop.Services.Forums
             var subscriptions = await GetAllSubscriptionsAsync(forumId: forum.Id);
             var languageId = (await _workContext.GetWorkingLanguageAsync()).Id;
 
-            foreach (var subscription in subscriptions)
+            foreach (var subscription in subscriptions.Select(subscription => subscription.CustomerId))
             {
-                if (subscription.CustomerId == forumTopic.CustomerId) continue;
+                if (subscription == forumTopic.CustomerId) continue;
 
-                var customer = await _customerService.GetCustomerByIdAsync(subscription.CustomerId);
+                var customer = await _customerService.GetCustomerByIdAsync(subscription);
 
                 if (!string.IsNullOrEmpty(customer?.Email)) 
                     await _workflowMessageService.SendNewForumTopicMessageAsync(customer, forumTopic, forum, languageId);

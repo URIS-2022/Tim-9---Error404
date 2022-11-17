@@ -8,6 +8,8 @@ namespace Nop.Core.Infrastructure
     /// </summary>
     public partial class BaseSingleton //promenjeno
     {
+        protected BaseSingleton() { }
+
         static BaseSingleton()
         {
             AllSingletons = new Dictionary<Type, object>();

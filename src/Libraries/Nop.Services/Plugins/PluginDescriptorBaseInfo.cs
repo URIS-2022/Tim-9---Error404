@@ -35,9 +35,9 @@ namespace Nop.Services.Plugins
         /// </summary>
         /// <param name="value">The PluginDescriptor to compare to this instance</param>
         /// <returns>True if the SystemName of the value parameter is the same as the SystemName of this instance; otherwise, false</returns>
-        public override bool Equals(object value)
+        public override bool Equals(object obj)
         {
-            return SystemName?.Equals((value as PluginDescriptorBaseInfo)?.SystemName) ?? false;
+            return SystemName?.Equals((obj as PluginDescriptorBaseInfo)?.SystemName) ?? false;
         }
 
         /// <summary>

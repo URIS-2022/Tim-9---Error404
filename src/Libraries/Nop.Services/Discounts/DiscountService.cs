@@ -435,7 +435,7 @@ namespace Nop.Services.Discounts
         /// <param name="discountRequirement">Discount requirement</param>
         /// <param name="recursive">A value indicating whether to recursively delete child requirements</param>
         /// <returns>A task that represents the asynchronous operation</returns>
-        public virtual async Task DeleteDiscountRequirementAsync(DiscountRequirement discountRequirement, bool recursive = false)
+        public virtual async Task DeleteDiscountRequirementAsync(DiscountRequirement discountRequirement, bool recursive)
         {
             if (discountRequirement == null)
                 throw new ArgumentNullException(nameof(discountRequirement));

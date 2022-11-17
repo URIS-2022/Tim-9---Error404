@@ -89,7 +89,7 @@ namespace Nop.Services.Html
         /// <returns>Formatted text</returns>
         public virtual string FormatText(string text, bool stripTags,
             bool convertPlainTextToHtml, bool allowHtml,
-            bool allowBBCode, bool resolveLinks, bool addNoFollowTag)
+            bool allowBbCode, bool resolveLinks, bool addNoFollowTag)
         {
             if (string.IsNullOrEmpty(text))
                 return string.Empty;
@@ -108,7 +108,7 @@ namespace Nop.Services.Html
                     text = ConvertPlainTextToHtml(text);
                 }
 
-                if (allowBBCode)
+                if (allowBbCode)
                 {
                     text = _bbCodeHelper.FormatText(text, true, true, true, true, true, true, true);
                 }

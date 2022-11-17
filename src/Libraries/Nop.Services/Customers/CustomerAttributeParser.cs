@@ -274,12 +274,12 @@ namespace Nop.Services.Customers
 
                 var found = false;
                 //selected customer attributes
-                foreach (var a1 in attributes1)
+                foreach (var a1 in attributes1.Select(a1 => a1.Id))
                 {
-                    if (a1.Id != a2.Id) 
+                    if (a1 != a2.Id) 
                         continue;
 
-                    var valuesStr = ParseValues(attributesXml, a1.Id);
+                    var valuesStr = ParseValues(attributesXml, a1);
 
                     found = valuesStr.Any(str1 => !string.IsNullOrEmpty(str1.Trim()));
                 }

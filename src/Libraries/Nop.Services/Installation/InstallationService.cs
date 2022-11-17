@@ -435,8 +435,8 @@ namespace Nop.Services.Installation
             var pattern = $"*.{NopInstallationDefaults.LocalizationResourcesFileExtension}";
             foreach (var filePath in _fileProvider.EnumerateFiles(directoryPath, pattern))
             {
-                using var streamReader = new StreamReader(filePath);
-                await localizationService.ImportResourcesFromXmlAsync(defaultLanguage, streamReader);
+                using var streamReader1 = new StreamReader(filePath);
+                await localizationService.ImportResourcesFromXmlAsync(defaultLanguage, streamReader1);
             }
 
             if (cultureInfo == null || regionInfo == null || cultureInfo.Name == NopCommonDefaults.DefaultLanguageCulture)
@@ -458,8 +458,6 @@ namespace Nop.Services.Installation
                 return;
 
             //download and import language pack
-            try
-            {
                 var httpClientFactory = EngineContext.Current.Resolve<IHttpClientFactory>();
                 var httpClient = httpClientFactory.CreateClient(NopHttpDefaults.DefaultHttpClient);
                 await using var stream = await httpClient.GetStreamAsync(languagePackInfo.languagePackDownloadLink);
@@ -480,8 +478,6 @@ namespace Nop.Services.Installation
                     StoreId = 0,
                     CreatedOrUpdatedDateUTC = DateTime.UtcNow
                 });
-            }
-            catch { }
         }
 
         /// <returns>A task that represents the asynchronous operation</returns>
@@ -792,7 +788,7 @@ namespace Nop.Services.Installation
             var defaultStore = await _storeRepository.Table.FirstOrDefaultAsync();
 
             if (defaultStore == null)
-                throw new Exception("No default store could be loaded");
+                throw new ArgumentNullException("No default store could be loaded");
 
             var storeId = defaultStore.Id;
 

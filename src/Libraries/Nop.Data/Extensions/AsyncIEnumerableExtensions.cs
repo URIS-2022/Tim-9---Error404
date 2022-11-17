@@ -223,6 +223,23 @@ namespace System.Linq
         }
 
         /// <summary>
+        /// Groups the elements of an async-enumerable sequence according to a specified
+        /// key selector function
+        /// </summary>
+        /// <typeparam name="TSource">The type of the elements in the source sequence</typeparam>
+        /// <typeparam name="TKey">The type of the grouping key computed for each element in the source sequence</typeparam>
+        /// <param name="source">An async-enumerable sequence whose elements to group</param>
+        /// <param name="keySelector">An asynchronous function to extract the key for each element</param>
+        /// <returns>
+        /// A sequence of async-enumerable groups, each of which corresponds to a unique
+        /// key value, containing all elements that share that same key value
+        /// </returns>
+        public static IAsyncEnumerable<IAsyncGrouping<TKey, TSource>> GroupByAwait<TSource, TKey>(this IEnumerable<TSource> source, Func<TSource, ValueTask<TKey>> keySelector)
+        {
+            return source.ToAsyncEnumerable().GroupByAwait(keySelector);
+        }
+
+        /// <summary>
         /// Applies an accumulator function over an async-enumerable sequence, returning
         /// the result of the aggregation as a single element in the result sequence. The
         /// specified seed value is used as the initial accumulator value
@@ -259,23 +276,6 @@ namespace System.Linq
             Func<TSource, ValueTask<TElement>> elementSelector) where TKey : notnull
         {
             return source.ToAsyncEnumerable().ToDictionaryAwaitAsync(keySelector, elementSelector);
-        }
-
-        /// <summary>
-        /// Groups the elements of an async-enumerable sequence according to a specified
-        /// key selector function
-        /// </summary>
-        /// <typeparam name="TSource">The type of the elements in the source sequence</typeparam>
-        /// <typeparam name="TKey">The type of the grouping key computed for each element in the source sequence</typeparam>
-        /// <param name="source">An async-enumerable sequence whose elements to group</param>
-        /// <param name="keySelector">An asynchronous function to extract the key for each element</param>
-        /// <returns>
-        /// A sequence of async-enumerable groups, each of which corresponds to a unique
-        /// key value, containing all elements that share that same key value
-        /// </returns>
-        public static IAsyncEnumerable<IAsyncGrouping<TKey, TSource>> GroupByAwait<TSource, TKey>(this IEnumerable<TSource> source, Func<TSource, ValueTask<TKey>> keySelector)
-        {
-            return source.ToAsyncEnumerable().GroupByAwait(keySelector);
         }
 
         /// <summary>

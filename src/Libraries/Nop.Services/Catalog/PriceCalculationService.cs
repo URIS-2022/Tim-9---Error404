@@ -375,9 +375,8 @@ namespace Nop.Services.Catalog
                 price += additionalCharge;
 
                 //rental products
-                if (product.IsRental)
-                    if (rentalStartDate.HasValue && rentalEndDate.HasValue)
-                        price *= _productService.GetRentalPeriods(product, rentalStartDate.Value, rentalEndDate.Value);
+                if ((product.IsRental) && (rentalStartDate.HasValue && rentalEndDate.HasValue))
+                    price *= _productService.GetRentalPeriods(product, rentalStartDate.Value, rentalEndDate.Value);
 
                 var priceWithoutDiscount = price;
 

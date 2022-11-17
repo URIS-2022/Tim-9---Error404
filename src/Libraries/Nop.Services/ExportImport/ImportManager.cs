@@ -819,8 +819,6 @@ namespace Nop.Services.ExportImport
             var pav = (await _productAttributeService.GetProductAttributeValuesAsync(productAttributeMapping.Id))
                 .FirstOrDefault(p => p.Id == productAttributeValueId);
 
-            //var pav = await _productAttributeService.GetProductAttributeValueByIdAsync(productAttributeValueId);
-
             var attributeControlType = (AttributeControlType)attributeControlTypeId;
 
             if (pav == null)

@@ -10,9 +10,12 @@ namespace Nop.Plugin.MultiFactorAuth.GoogleAuthenticator
         /// <summary>
         /// Gets a plugin system name
         /// </summary>
-        public static string SystemName = "MultiFactorAuth.GoogleAuthenticator";
+        public static string SystemName
+        {
+            get { return "MultiFactorAuth.GoogleAuthenticator"; }
+        }
 
-        
+
         /// <summary>
         /// Gets the configuration route name
         /// </summary>

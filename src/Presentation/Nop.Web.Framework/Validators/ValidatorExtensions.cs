@@ -77,8 +77,6 @@ namespace Nop.Web.Framework.Validators
             regExp += customerSettings.PasswordRequireNonAlphanumeric ? "(?=.*?[#?!@$%^&*-])" : "";
             regExp += $".{{{customerSettings.PasswordMinLength},}}$";
 
-            ;
-
             var options = ruleBuilder
                 .NotEmpty().WithMessageAwait(localizationService.GetResourceAsync("Validation.Password.IsNotEmpty"))
                 .Matches(regExp).WithMessageAwait(async () => string.Format(await localizationService.GetResourceAsync("Validation.Password.Rule"),

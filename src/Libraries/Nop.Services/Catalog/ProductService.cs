@@ -294,7 +294,7 @@ namespace Nop.Services.Catalog
 
                     var selectedIds = allIds.Intersect(exIds).ToList();
 
-                    if (selectedIds.Count() != allIds.Count)
+                    if (selectedIds.Count != allIds.Count)
                         if (_catalogSettings.AttributeValueOutOfStockDisplayType == AttributeValueOutOfStockDisplayType.AlwaysDisplay)
                             return await _localizationService.GetResourceAsync("Products.Availability.SelectRequiredAttributes");
                         else
@@ -1958,17 +1958,17 @@ namespace Nop.Services.Catalog
         /// A task that represents the asynchronous operation
         /// The task result contains the related products
         /// </returns>
-        public virtual async Task<IList<RelatedProduct>> GetRelatedProductsByProductId1Async(int productId, bool showHidden = false)
+        public virtual async Task<IList<RelatedProduct>> GetRelatedProductsByProductId1Async(int productId1, bool showHidden = false)
         {
             var query = from rp in _relatedProductRepository.Table
                         join p in _productRepository.Table on rp.ProductId2 equals p.Id
-                        where rp.ProductId1 == productId &&
+                        where rp.ProductId1 == productId1 &&
                         !p.Deleted &&
                         (showHidden || p.Published)
                         orderby rp.DisplayOrder, rp.Id
                         select rp;
 
-            var relatedProducts = await _staticCacheManager.GetAsync(_staticCacheManager.PrepareKeyForDefaultCache(NopCatalogDefaults.RelatedProductsCacheKey, productId, showHidden), async () => await query.ToListAsync());
+            var relatedProducts = await _staticCacheManager.GetAsync(_staticCacheManager.PrepareKeyForDefaultCache(NopCatalogDefaults.RelatedProductsCacheKey, productId1, showHidden), async () => await query.ToListAsync());
 
             return relatedProducts;
         }

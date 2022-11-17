@@ -318,12 +318,13 @@ namespace Nop.Services.ExportImport
         protected virtual async Task<object> GetManufacturersAsync(Product product)
         {
             string manufacturerNames = null;
+            StringBuilder sbManufacturerNames = new StringBuilder();
             foreach (var pm in await _manufacturerService.GetProductManufacturersByProductIdAsync(product.Id, true))
             {
                 if (_catalogSettings.ExportImportRelatedEntitiesByName)
                 {
                     var manufacturer = await _manufacturerService.GetManufacturerByIdAsync(pm.ManufacturerId);
-                    manufacturerNames += manufacturer.Name;
+                    sbManufacturerNames.Append(manufacturer.Name);
                 }
                 else
                 {
@@ -332,7 +333,7 @@ namespace Nop.Services.ExportImport
 
                 manufacturerNames += ";";
             }
-
+            manufacturerNames = sbManufacturerNames.ToString();
             return manufacturerNames;
         }
 
