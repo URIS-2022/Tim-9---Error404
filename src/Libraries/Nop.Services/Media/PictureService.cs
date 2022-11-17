@@ -429,7 +429,7 @@ namespace Nop.Services.Media
             lastPart = lastPart switch
             {
                 "pjpeg" => "jpg",
-                "gif" => "gif",
+                //promenjeno
                 "x-png" or "png" => "png",
                 "x-icon" => "ico",
                 "webp" => "webp",

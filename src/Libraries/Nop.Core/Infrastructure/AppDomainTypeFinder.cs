@@ -134,7 +134,7 @@ namespace Nop.Core.Infrastructure
                     }
 
                     //old loading stuff
-                    //Assembly a = Assembly.ReflectionOnlyLoadFrom(dllPath);
+                    //promenjeno
                     //if (Matches(a.FullName) && !loadedAssemblyNames.Contains(a.FullName))
                     //{
                     //    App.Load(a.FullName);

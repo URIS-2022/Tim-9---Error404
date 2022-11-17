@@ -78,7 +78,7 @@ namespace Nop.Web.Areas.Admin.Infrastructure.Mapper
         public AdminMapperConfiguration()
         {
             //create specific maps
-            CreateConfigMaps();
+            //promenjeno
             CreateAffiliatesMaps();
             CreateAuthenticationMaps();
             CreateMultiFactorAuthenticationMaps();

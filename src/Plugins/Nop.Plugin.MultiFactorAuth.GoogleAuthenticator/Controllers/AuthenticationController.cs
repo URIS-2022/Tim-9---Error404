@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Nop.Core;
 using Nop.Core.Domain.Customers;
@@ -50,7 +51,9 @@ namespace Nop.Plugin.MultiFactorAuth.GoogleAuthenticator.Controllers
 
         #region Methods
 
+
         [HttpPost]
+        [Obsolete]  //prmenjeno
         public async Task<IActionResult> RegisterGoogleAuthenticator(AuthModel model)
         {
             var currentCustomer = await _workContext.GetCurrentCustomerAsync();

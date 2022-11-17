@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
 using System.Linq;
+using System.Text;
 
 namespace Nop.Core.ComponentModel
 {
@@ -87,6 +88,7 @@ namespace Nop.Core.ComponentModel
         /// <returns>Result</returns>
         public override object ConvertTo(ITypeDescriptorContext context, CultureInfo culture, object value, Type destinationType)
         {
+            StringBuilder sb = new StringBuilder();
             if (destinationType != typeof(string))
                 return base.ConvertTo(context, culture, value, destinationType);
 
@@ -98,10 +100,10 @@ namespace Nop.Core.ComponentModel
             for (var i = 0; i < ((IList<T>)value).Count; i++)
             {
                 var str1 = Convert.ToString(((IList<T>)value)[i], CultureInfo.InvariantCulture);
-                result += str1;
+                sb.AppendFormat("{0}{1}", result, str1);
                 //don't add comma after the last element
                 if (i != ((IList<T>)value).Count - 1)
-                    result += ",";
+                    sb.AppendFormat("{0}{1}", result, ";");  //promenjeno
             }
 
             return result;

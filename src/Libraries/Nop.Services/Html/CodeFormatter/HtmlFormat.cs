@@ -97,7 +97,7 @@ namespace Nop.Services.Html.CodeFormatter
         {
             if (match.Groups[1].Success) //JavaScript code
             {
-                //string s = match.ToString();
+                //promenjeno
                 return jsf.FormatSubCode(match.ToString());
             }
 

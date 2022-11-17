@@ -237,7 +237,7 @@ namespace Nop.Web.Controllers
                         cultureInfo = new CultureInfo(model.Country[3..]);
                         regionInfo = new RegionInfo(model.Country[3..]);
                     }
-                    catch { }
+                    catch { Console.WriteLine("Error"); }  //promenjeno
 
                     //get URL to download language pack
                     if (cultureInfo.Name != NopCommonDefaults.DefaultLanguageCulture)
@@ -255,7 +255,7 @@ namespace Nop.Web.Controllers
                             }
 
                         }
-                        catch { }
+                        catch { Console.WriteLine("Error"); }  //promenjeno
                     }
 
                     //upload CLDR

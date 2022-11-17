@@ -86,7 +86,7 @@ namespace Nop.Web.Framework.UI.Paging
         /// <summary>
         /// Boolean parameter names
         /// </summary>
-        private IList<string> _booleanParameterNames = new List<string>();
+        private IList<string> _booleanParameterNames = new List<string>();  //promenjeno
 
         /// <summary>
         /// First page css class name
