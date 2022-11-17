@@ -291,16 +291,16 @@ namespace Nop.Plugin.Misc.Sendinblue.Controllers
         [AuthorizeAdmin]
         [Area(AreaNames.Admin)]
         /// <returns>A task that represents the asynchronous operation</returns>
-        public async Task<string> GetSynchronizationInfo()
-        {
-            var res = await _staticCacheManager.GetAsync(_staticCacheManager.PrepareKeyForDefaultCache(SendinblueDefaults.SyncKeyCache), () => string.Empty);
-            await _staticCacheManager.RemoveAsync(SendinblueDefaults.SyncKeyCache);
+      //  public async Task<string> GetSynchronizationInfo()
+       // {
+          // var res = await _staticCacheManager.GetAsync(_staticCacheManager.PrepareKeyForDefaultCache(SendinblueDefaults.SyncKeyCache), () => string.Empty);
+         //   await _staticCacheManager.RemoveAsync(SendinblueDefaults.SyncKeyCache);
 
-            return res;
-        }
+          //  return res;
+       // }
 
         [AuthorizeAdmin]
-        [Area(AreaNames.Admin)]
+      //  [Area(AreaNames.Admin)]
         [HttpPost, ActionName("Configure")]
         [FormValueRequired("saveSMTP")]
         public async Task<IActionResult> ConfigureSMTP(ConfigurationModel model)
@@ -628,12 +628,12 @@ namespace Nop.Plugin.Misc.Sendinblue.Controllers
                 await _logger.InformationAsync(logInfo);
 
                 //display info on configuration page in case of the manually synchronization
-                await _staticCacheManager.SetAsync(_staticCacheManager.PrepareKeyForDefaultCache(SendinblueDefaults.SyncKeyCache), logInfo);
+              //  await _staticCacheManager.SetAsync(_staticCacheManager.PrepareKeyForDefaultCache(SendinblueDefaults.SyncKeyCache), logInfo);
             }
             catch (Exception ex)
             {
                 await _logger.ErrorAsync(ex.Message, ex);
-                await _staticCacheManager.SetAsync(_staticCacheManager.PrepareKeyForDefaultCache(SendinblueDefaults.SyncKeyCache), ex.Message);
+             //   await _staticCacheManager.SetAsync(_staticCacheManager.PrepareKeyForDefaultCache(SendinblueDefaults.SyncKeyCache), ex.Message);
             }
 
             return Ok();

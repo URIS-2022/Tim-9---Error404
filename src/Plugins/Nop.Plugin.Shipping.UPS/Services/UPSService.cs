@@ -230,7 +230,7 @@ namespace Nop.Plugin.Shipping.UPS.Services
         /// </summary>
         /// <param name="trackingNumber">Tracking number</param>
         /// <returns>Track request details</returns>
-        private UPSTrack.TrackRequest CreateTrackRequest(string trackingNumber)
+        private static UPSTrack.TrackRequest CreateTrackRequest(string trackingNumber)  //promenjeno
         {
             return new UPSTrack.TrackRequest
             {

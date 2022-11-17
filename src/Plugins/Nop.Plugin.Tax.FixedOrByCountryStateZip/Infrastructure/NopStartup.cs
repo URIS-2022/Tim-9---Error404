@@ -20,7 +20,7 @@ namespace Nop.Plugin.Tax.FixedOrByCountryStateZip.Infrastructure
         public void ConfigureServices(IServiceCollection services, IConfiguration configuration)
         {
             services.AddScoped<ITaxProvider, FixedOrByCountryStateZipTaxProvider>();
-            services.AddScoped<ICountryStateZipService, CountryStateZipService>();
+          //  services.AddScoped<ICountryStateZipService, CountryStateZipService>();
         }
 
         /// <summary>

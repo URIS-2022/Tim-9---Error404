@@ -1195,7 +1195,7 @@ namespace Nop.Web.Areas.Admin.Controllers
                     try
                     {
                         //validate regex rule
-                        var unused = Regex.IsMatch("test_user_name", customerSettings.UsernameValidationRule);
+                        //promenjeno
                     }
                     catch (ArgumentException)
                     {

@@ -105,8 +105,8 @@ namespace Nop.Plugin.Widgets.FacebookPixel.Controllers
             var model = new ConfigurationModel();
             await _baseAdminModelFactory.PrepareStoresAsync(model.FacebookPixelSearchModel.AvailableStores);
             model.FacebookPixelSearchModel.HideStoresList = model.FacebookPixelSearchModel.AvailableStores.SelectionIsNotPossible();
-            model.FacebookPixelSearchModel.HideSearchBlock = await _genericAttributeService
-                .GetAttributeAsync<bool>(await _workContext.GetCurrentCustomerAsync(), FacebookPixelDefaults.HideSearchBlockAttribute);
+          //  model.FacebookPixelSearchModel.HideSearchBlock = await _genericAttributeService
+           //     .GetAttributeAsync<bool>(await _workContext.GetCurrentCustomerAsync(), FacebookPixelDefaults.HideSearchBlockAttribute);
             model.FacebookPixelSearchModel.SetGridPageSize();
             model.HideList = !(await _facebookPixelService.GetPagedConfigurationsAsync()).Any();
 

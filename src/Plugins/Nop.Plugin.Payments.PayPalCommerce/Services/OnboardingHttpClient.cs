@@ -26,7 +26,7 @@ namespace Nop.Plugin.Payments.PayPalCommerce.Services
         {
             //configure client
             httpClient.BaseAddress = new Uri(PayPalCommerceDefaults.Onboarding.ServiceUrl);
-            httpClient.Timeout = TimeSpan.FromSeconds(PayPalCommerceDefaults.Onboarding.RequestTimeout);
+           // httpClient.Timeout = TimeSpan.FromSeconds(PayPalCommerceDefaults.Onboarding.RequestTimeout);
             httpClient.DefaultRequestHeaders.Add(HeaderNames.UserAgent, PayPalCommerceDefaults.UserAgent);
             httpClient.DefaultRequestHeaders.Add(HeaderNames.Accept, MimeTypes.ApplicationJson);
 

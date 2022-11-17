@@ -477,7 +477,7 @@ namespace Nop.Plugin.Shipping.EasyPost.Services
         /// </summary>
         /// <param name="batch">Batch</param>
         /// <returns>Batch status</returns>
-        private BatchStatus GetBatchStatus(Batch batch)
+        private static BatchStatus GetBatchStatus(Batch batch)  //promenjeno
         {
             return batch.state?.ToLower() switch
             {
